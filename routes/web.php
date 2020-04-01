@@ -17,6 +17,9 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Auth::routes();
+Auth::routes([
+    'confirm' => false,
+    'verify' => true,
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
