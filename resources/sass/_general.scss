@@ -1833,3 +1833,129 @@ nav
         width: 26.666666666666667vw;
     }
 }
+
+#auth
+{
+    fieldset
+    {
+        border: 0;
+        margin: 16px auto;
+        margin: 1.333333333333333vw auto;
+        padding: 16px 0;
+        padding: 1.333333333333333vw 0;
+        width: 1000px;
+        width: 83.333333333333333vw;
+    }
+
+    &:after
+    {
+        clear: both;
+        content: '';
+        display: table;
+    }
+
+    label,
+    input
+    {
+        float: left;
+    }
+
+    label
+    {
+        font-weight: 100;
+        width: 25%;
+    }
+
+    button,
+    input
+    {
+        @include appearance(none);
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-size: 1.666666666666667vw;
+        font-weight: 900;
+        margin: 0;
+        outline: 0;
+    }
+
+    button
+    {
+        background: black;
+        color: white;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        padding: 15px 30px;
+        padding: 1.25vw 2.5vw;
+    }
+
+    input
+    {
+        box-shadow: 0 0 1px 0 rgba(black, 0.5);
+        box-shadow: 0 0 0.083333333333333vw 0 rgba(black, 0.5);
+        padding: 8px 12px;
+        padding: 0.666666666666667vw 1vw;
+    }
+
+    .form-text
+    {
+        label
+        {
+            padding: 8px 5% 8px 0;
+            padding: 0.666666666666667vw 5% 0.666666666666667vw 0;
+            text-align: right;
+            width: 25%;
+        }
+
+        input
+        {
+            width: 70%;
+        }
+    }
+
+    .form-checkbox
+    {
+        label
+        {
+            cursor: pointer;
+            padding: 8px 0 8px 5%;
+            padding: 0.666666666666667vw 0 0.666666666666667vw 5%;
+            text-decoration: underline;
+            width: 70%;
+        }
+
+        input
+        {
+            visibility: hidden;
+            width: 25%;
+
+            &:checked + label:after
+            {
+                content: '\2714';
+                margin-left: 8px;
+                margin-left: 0.666666666666667vw;
+                position: absolute;
+            }
+        }
+    }
+
+    aside
+    {
+        margin: 64px auto;
+        margin: 5.333333333333333vw auto;
+        width: 320px;
+        width: 26.666666666666667vw;
+
+        a
+        {
+            color: black;
+            display: block;
+            margin: 32px 0;
+            margin: 2.666666666666667vw 0;
+            text-align: center;
+        }
+    }
+}
