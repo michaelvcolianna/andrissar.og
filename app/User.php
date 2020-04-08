@@ -36,4 +36,12 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the character for the user.
+     */
+    public function character()
+    {
+        return $this->hasOne('App\Character');
+    }
 }

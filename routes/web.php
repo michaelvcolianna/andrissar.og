@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('home');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes([
     'confirm' => false,
     'verify' => true,
 ]);
-
-Route::get('/home', 'HomeController@index')->name('home');

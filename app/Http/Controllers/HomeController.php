@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Character;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $character = Character::firstOrCreate(['user_id' => auth()->user()->id]);
+
+        return view('home', compact('character'));
     }
 }
