@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="pages">
+    <input id="character_id" type="hidden" value="{{ $character->id }}">
+
+    <form id="pages">
         <div class="character-sheet" id="page-1">
             <div class="character_name">
                 <label for="character_name">Character Name</label>
@@ -761,5 +763,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 @endsection
