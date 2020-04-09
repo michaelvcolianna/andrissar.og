@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
+@section('scripts')
+    <script src="{{ asset('js/character_sheet.js') }}" defer></script>
+@endsection
+
 @section('content')
     <input id="character_id" type="hidden" value="{{ $character->id }}">
 
-    <form id="pages">
+    <form id="sheet">
         <div class="character-sheet" id="page-1">
             <div class="character_name">
                 <label for="character_name">Character Name</label>
@@ -123,14 +127,14 @@
 
             <div class="passive">
                 <label for="proficiency_bonus">Proficiency Bonus</label>
-                <input name="proficiency[bonus]" id="proficiency_bonus" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->proficiency_bonus }}">
+                <input name="proficiency_bonus" id="proficiency_bonus" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->proficiency_bonus }}">
             </div>
 
             <div id="throws">
                 <div id="strength_save">
                     <div class="class_save">
                         <label for="strength_class_save">Strength Class Save?</label>
-                        <input name="strength[class_save]" id="strength_class_save" type="checkbox" {{ $character->strength['class_save'] ? 'checked' : '' }}>
+                        <input name="strength[class_save]" type="hidden" value="0"><input name="strength[class_save]" id="strength_class_save" type="checkbox" value="1" {{ $character->strength['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -142,7 +146,7 @@
                 <div id="dexterity_save">
                     <div class="class_save">
                         <label for="dexterity_class_save">Dexterity Class Save?</label>
-                        <input name="dexterity[class_save]" id="dexterity_class_save" type="checkbox" {{ $character->dexterity['class_save'] ? 'checked' : '' }}>
+                        <input name="dexterity[class_save]" type="hidden" value="0"><input name="dexterity[class_save]" id="dexterity_class_save" type="checkbox" value="1" {{ $character->dexterity['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -154,7 +158,7 @@
                 <div id="constitution_save">
                     <div class="class_save">
                         <label for="constitution_class_save">Constitution Class Save?</label>
-                        <input name="constitution[class_save]" id="constitution_class_save" type="checkbox" {{ $character->constitution['class_save'] ? 'checked' : '' }}>
+                        <input name="constitution[class_save]" type="hidden" value="0"><input name="constitution[class_save]" id="constitution_class_save" type="checkbox" value="1" {{ $character->constitution['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -166,7 +170,7 @@
                 <div id="intelligence_save">
                     <div class="class_save">
                         <label for="intelligence_class_save">Intelligence Class Save?</label>
-                        <input name="intelligence[class_save]" id="intelligence_class_save" type="checkbox" {{ $character->intelligence['class_save'] ? 'checked' : '' }}>
+                        <input name="intelligence[class_save]" type="hidden" value="0"><input name="intelligence[class_save]" id="intelligence_class_save" type="checkbox" value="1" {{ $character->intelligence['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -178,7 +182,7 @@
                 <div id="wisdom_save">
                     <div class="class_save">
                         <label for="wisdom_class_save">Wisdom Class Save?</label>
-                        <input name="wisdom[class_save]" id="wisdom_class_save" type="checkbox" {{ $character->wisdom['class_save'] ? 'checked' : '' }}>
+                        <input name="wisdom[class_save]" type="hidden" value="0"><input name="wisdom[class_save]" id="wisdom_class_save" type="checkbox" value="1" {{ $character->wisdom['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -190,7 +194,7 @@
                 <div id="charisma_save">
                     <div class="class_save">
                         <label for="charisma_class_save">Charisma Class Save?</label>
-                        <input name="charisma[class_save]" id="charisma_class_save" type="checkbox" {{ $character->charisma['class_save'] ? 'checked' : '' }}>
+                        <input name="charisma[class_save]" type="hidden" value="0"><input name="charisma[class_save]" id="charisma_class_save" type="checkbox" value="1" {{ $character->charisma['class_save'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="saving_throw">
@@ -202,7 +206,7 @@
                 <div id="acrobatics">
                     <div class="class_skill">
                         <label for="acrobatics_class_skill">Acrobatics Class Skill?</label>
-                        <input name="acrobatics[class_skill]" id="acrobatics_class_skill" type="checkbox" {{ $character->acrobatics['class_skill'] ? 'checked' : '' }}>
+                        <input name="acrobatics[class_skill]" type="hidden" value="0"><input name="acrobatics[class_skill]" id="acrobatics_class_skill" type="checkbox" value="1" {{ $character->acrobatics['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -214,7 +218,7 @@
                 <div id="animal_handling">
                     <div class="class_skill">
                         <label for="animal_handling_class_skill">Animal Handling Class Skill?</label>
-                        <input name="animal_handling[class_skill]" id="animal_handling_class_skill" type="checkbox" {{ $character->animal_handling['class_skill'] ? 'checked' : '' }}>
+                        <input name="animal_handling[class_skill]" type="hidden" value="0"><input name="animal_handling[class_skill]" id="animal_handling_class_skill" type="checkbox" value="1" {{ $character->animal_handling['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -226,7 +230,7 @@
                 <div id="arcana">
                     <div class="class_skill">
                         <label for="arcana_class_skill">Arcana Class Skill?</label>
-                        <input name="arcana[class_skill]" id="arcana_class_skill" type="checkbox" {{ $character->arcana['class_skill'] ? 'checked' : '' }}>
+                        <input name="arcana[class_skill]" type="hidden" value="0"><input name="arcana[class_skill]" id="arcana_class_skill" type="checkbox" value="1" {{ $character->arcana['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -238,7 +242,7 @@
                 <div id="athletics">
                     <div class="class_skill">
                         <label for="athletics_class_skill">Athletics Class Skill?</label>
-                        <input name="athletics[class_skill]" id="athletics_class_skill" type="checkbox" {{ $character->athletics['class_skill'] ? 'checked' : '' }}>
+                        <input name="athletics[class_skill]" type="hidden" value="0"><input name="athletics[class_skill]" id="athletics_class_skill" type="checkbox" value="1" {{ $character->athletics['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -250,7 +254,7 @@
                 <div id="deception">
                     <div class="class_skill">
                         <label for="deception_class_skill">Deception Class Skill?</label>
-                        <input name="deception[class_skill]" id="deception_class_skill" type="checkbox" {{ $character->deception['class_skill'] ? 'checked' : '' }}>
+                        <input name="deception[class_skill]" type="hidden" value="0"><input name="deception[class_skill]" id="deception_class_skill" type="checkbox" value="1" {{ $character->deception['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -262,7 +266,7 @@
                 <div id="history">
                     <div class="class_skill">
                         <label for="history_class_skill">History Class Skill?</label>
-                        <input name="history[class_skill]" id="history_class_skill" type="checkbox" {{ $character->history['class_skill'] ? 'checked' : '' }}>
+                        <input name="history[class_skill]" type="hidden" value="0"><input name="history[class_skill]" id="history_class_skill" type="checkbox" value="1" {{ $character->history['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -274,7 +278,7 @@
                 <div id="insight">
                     <div class="class_skill">
                         <label for="insight_class_skill">Insight Class Skill?</label>
-                        <input name="insight[class_skill]" id="insight_class_skill" type="checkbox" {{ $character->insight['class_skill'] ? 'checked' : '' }}>
+                        <input name="insight[class_skill]" type="hidden" value="0"><input name="insight[class_skill]" id="insight_class_skill" type="checkbox" value="1" {{ $character->insight['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -286,7 +290,7 @@
                 <div id="intimidation">
                     <div class="class_skill">
                         <label for="intimidation_class_skill">Intimidation Class Skill?</label>
-                        <input name="intimidation[class_skill]" id="intimidation_class_skill" type="checkbox" {{ $character->intimidation['class_skill'] ? 'checked' : '' }}>
+                        <input name="intimidation[class_skill]" type="hidden" value="0"><input name="intimidation[class_skill]" id="intimidation_class_skill" type="checkbox" value="1" {{ $character->intimidation['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -298,7 +302,7 @@
                 <div id="investigation">
                     <div class="class_skill">
                         <label for="investigation_class_skill">Investigation Class Skill?</label>
-                        <input name="investigation[class_skill]" id="investigation_class_skill" type="checkbox" {{ $character->investigation['class_skill'] ? 'checked' : '' }}>
+                        <input name="investigation[class_skill]" type="hidden" value="0"><input name="investigation[class_skill]" id="investigation_class_skill" type="checkbox" value="1" {{ $character->investigation['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -310,7 +314,7 @@
                 <div id="medicine">
                     <div class="class_skill">
                         <label for="medicine_class_skill">Medicine Class Skill?</label>
-                        <input name="medicine[class_skill]" id="medicine_class_skill" type="checkbox" {{ $character->medicine['class_skill'] ? 'checked' : '' }}>
+                        <input name="medicine[class_skill]" type="hidden" value="0"><input name="medicine[class_skill]" id="medicine_class_skill" type="checkbox" value="1" {{ $character->medicine['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -322,7 +326,7 @@
                 <div id="nature">
                     <div class="class_skill">
                         <label for="nature_class_skill">Nature Class Skill?</label>
-                        <input name="nature[class_skill]" id="nature_class_skill" type="checkbox" {{ $character->nature['class_skill'] ? 'checked' : '' }}>
+                        <input name="nature[class_skill]" type="hidden" value="0"><input name="nature[class_skill]" id="nature_class_skill" type="checkbox" value="1" {{ $character->nature['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -334,7 +338,7 @@
                 <div id="perception">
                     <div class="class_skill">
                         <label for="perception_class_skill">Perception Class Skill?</label>
-                        <input name="perception[class_skill]" id="perception_class_skill" type="checkbox" {{ $character->perception['class_skill'] ? 'checked' : '' }}>
+                        <input name="perception[class_skill]" type="hidden" value="0"><input name="perception[class_skill]" id="perception_class_skill" type="checkbox" value="1" {{ $character->perception['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -346,7 +350,7 @@
                 <div id="performance">
                     <div class="class_skill">
                         <label for="performance_class_skill">Performance Class Skill?</label>
-                        <input name="performance[class_skill]" id="performance_class_skill" type="checkbox" {{ $character->performance['class_skill'] ? 'checked' : '' }}>
+                        <input name="performance[class_skill]" type="hidden" value="0"><input name="performance[class_skill]" id="performance_class_skill" type="checkbox" value="1" {{ $character->performance['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -358,7 +362,7 @@
                 <div id="persuasion">
                     <div class="class_skill">
                         <label for="persuasion_class_skill">Persuasion Class Skill?</label>
-                        <input name="persuasion[class_skill]" id="persuasion_class_skill" type="checkbox" {{ $character->persuasion['class_skill'] ? 'checked' : '' }}>
+                        <input name="persuasion[class_skill]" type="hidden" value="0"><input name="persuasion[class_skill]" id="persuasion_class_skill" type="checkbox" value="1" {{ $character->persuasion['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -370,7 +374,7 @@
                 <div id="religion">
                     <div class="class_skill">
                         <label for="religion_class_skill">Religion Class Skill?</label>
-                        <input name="religion[class_skill]" id="religion_class_skill" type="checkbox" {{ $character->religion['class_skill'] ? 'checked' : '' }}>
+                        <input name="religion[class_skill]" type="hidden" value="0"><input name="religion[class_skill]" id="religion_class_skill" type="checkbox" value="1" {{ $character->religion['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -382,7 +386,7 @@
                 <div id="sleight_of_hand">
                     <div class="class_skill">
                         <label for="sleight_of_hand_class_skill">Sleight of Hand Class Skill?</label>
-                        <input name="sleight_of_hand[class_skill]" id="sleight_of_hand_class_skill" type="checkbox" {{ $character->sleight_of_hand['class_skill'] ? 'checked' : '' }}>
+                        <input name="sleight_of_hand[class_skill]" type="hidden" value="0"><input name="sleight_of_hand[class_skill]" id="sleight_of_hand_class_skill" type="checkbox" value="1" {{ $character->sleight_of_hand['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -394,7 +398,7 @@
                 <div id="stealth">
                     <div class="class_skill">
                         <label for="stealth_class_skill">Stealth Class Skill?</label>
-                        <input name="stealth[class_skill]" id="stealth_class_skill" type="checkbox" {{ $character->stealth['class_skill'] ? 'checked' : '' }}>
+                        <input name="stealth[class_skill]" type="hidden" value="0"><input name="stealth[class_skill]" id="stealth_class_skill" type="checkbox" value="1" {{ $character->stealth['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -406,7 +410,7 @@
                 <div id="survival">
                     <div class="class_skill">
                         <label for="survival_class_skill">Survival Class Skill?</label>
-                        <input name="survival[class_skill]" id="survival_class_skill" type="checkbox" {{ $character->survival['class_skill'] ? 'checked' : '' }}>
+                        <input name="survival[class_skill]" type="hidden" value="0"><input name="survival[class_skill]" id="survival_class_skill" type="checkbox" value="1" {{ $character->survival['class_skill'] ? 'checked' : '' }}>
                     </div>
 
                     <div class="score">
@@ -470,14 +474,14 @@
                 @foreach($character->death_saves['successes'] as $save)
                     <div class="success">
                         <label for="death_save_success_{{ $loop->iteration }}">Death Save Success {{ $loop->iteration }}</label>
-                        <input name="death_saves[successes][{{ $loop->index }}]" id="death_save_success_{{ $loop->iteration }}" type="checkbox" {{ $character->death_saves['successes'][$loop->index] ? 'checked' : '' }}>
+                        <input name="death_saves[successes][{{ $loop->index }}]" type="hidden" value="0"><input name="death_saves[successes][{{ $loop->index }}]" id="death_save_success_{{ $loop->iteration }}" type="checkbox" value="1" {{ $character->death_saves['successes'][$loop->index] ? 'checked' : '' }}>
                     </div>
                 @endforeach
 
                 @foreach($character->death_saves['failures'] as $save)
                     <div class="failure">
                         <label for="death_save_failure_{{ $loop->iteration }}">Death Save Failure {{ $loop->iteration }}</label>
-                        <input name="death_saves[failures][{{ $loop->index }}]" id="death_save_failure_{{ $loop->iteration }}" type="checkbox" {{ $character->death_saves['failures'][$loop->index] ? 'checked' : '' }}>
+                        <input name="death_saves[failures][{{ $loop->index }}]" type="hidden" value="0"><input name="death_saves[failures][{{ $loop->index }}]" id="death_save_failure_{{ $loop->iteration }}" type="checkbox" value="1" {{ $character->death_saves['failures'][$loop->index] ? 'checked' : '' }}>
                     </div>
                 @endforeach
             </div>
@@ -684,7 +688,7 @@
                                     <div class="spell" id="spell_level_{{ $i }}_spell_{{ $loop->index }}">
                                         <div class="spell_prepared">
                                             <label for="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared">Spell Level {{ $i }} Spell {{ $loop->iteration }} Prepared?</label>
-                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
+                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" type="hidden" value="0"><input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" value="1" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
                                         </div>
 
                                         <div class="spell_name">
@@ -716,7 +720,7 @@
                                     <div class="spell" id="spell_level_{{ $i }}_spell_{{ $loop->index }}">
                                         <div class="spell_prepared">
                                             <label for="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared">Spell Level {{ $i }} Spell {{ $loop->iteration }} Prepared?</label>
-                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
+                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" type="hidden" value="0"><input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" value="1" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
                                         </div>
 
                                         <div class="spell_name">
@@ -748,7 +752,7 @@
                                     <div class="spell" id="spell_level_{{ $i }}_spell_{{ $loop->index }}">
                                         <div class="spell_prepared">
                                             <label for="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared">Spell Level {{ $i }} Spell {{ $loop->iteration }} Prepared?</label>
-                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
+                                            <input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" type="hidden" value="0"><input name="spells[{{ $i }}][list][{{ $loop->index }}][prepared]" id="spell_level_{{ $i }}_spell_{{ $loop->index }}_prepared" type="checkbox" value="1" {{ $character->spells[$i]['list'][$loop->index]['prepared'] ? 'checked' : '' }}>
                                         </div>
 
                                         <div class="spell_name">
