@@ -1,1962 +1,1971 @@
-
-body,
-button,
-input,
-textarea
+@media screen and (min-width: 768px)
 {
-    font-family: sans-serif;
-}
-
-body
-{
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    font-size: 1.666666666666667vw;
-    margin: 0;
-}
-
-figure
-{
-    margin: 0;
-}
-
-figcaption
-{
-    display: none;
-}
-
-img
-{
-    display: block;
-    max-width: 100%;
-}
-
-header
-{
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(black, 0.25);
-    box-shadow: 0 0.083333333333333vw 0.25vw rgba(black, 0.25);
-    padding: 10px 15px 4px 15px;
-    padding: 0.833333333333333vw 1.25vw 0.333333333333333vw 1.25vw;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-nav
-{
-    @include flexbox;
-    @include flex-flow(row wrap);
-    @include justify-content(space-between);
-    margin: auto;
-    width: 95vw;
-
-    span,
-    button
+    body,
+    button,
+    input,
+    textarea
     {
-        font-variant: small-caps;
-        text-transform: lowercase;
+        font-family: sans-serif;
     }
 
-    span
+    body
     {
-        font-weight: 900;
-        margin-right: 5px;
-        margin-right: 0.416666666666667vw;
-    }
-
-    button
-    {
-        @include appearance(none);
-        background-color: transparent;
-        border: 0;
-        border-radius: 0;
-        color: dodgerblue;
+        background-color: white;
+        color: black;
         font-size: 20px;
         font-size: 1.666666666666667vw;
         margin: 0;
-        padding: 0;
-        text-decoration: underline;
     }
-}
 
-#brand
-{
-    color: black;
-    font-family: fantasy;
-    font-weight: 900;
-    text-decoration: none;
-}
-
-.character-sheet
-{
-    background-size: 100%;
-    height: calc(100vw * (11/8.5));
-    margin: auto;
-    position: relative;
-    width: 100vw;
-
-    label
+    .toggle,
+    .toggle_label,
+    #sheet p
     {
         display: none;
     }
 
-    figure,
-    input,
-    textarea
+    figure
     {
-        position: absolute;
-    }
-
-    input,
-    textarea
-    {
-        @include appearance(none);
-        background-color: transparent;
-        border: 0;
-        border-radius: 0;
-        box-sizing: border-box;
-        font-size: 16px;
-        font-size: 1.333333333333333vw;
         margin: 0;
-        outline: 0;
-        padding: 0;
     }
 
-    input[type="text"],
-    textarea
+    figcaption
     {
-        &:hover
+        display: none;
+    }
+
+    img
+    {
+        display: block;
+        max-width: 100%;
+    }
+
+    header
+    {
+        background-color: white;
+        box-shadow: 0 1px 3px rgba(black, 0.25);
+        box-shadow: 0 0.083333333333333vw 0.25vw rgba(black, 0.25);
+        padding: 10px 15px 4px 15px;
+        padding: 0.833333333333333vw 1.25vw 0.333333333333333vw 1.25vw;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    nav
+    {
+        @include flexbox;
+        @include flex-flow(row wrap);
+        @include justify-content(space-between);
+        margin: auto;
+        width: 95vw;
+
+        span,
+        button
         {
-            cursor: text;
+            font-variant: small-caps;
+            text-transform: lowercase;
+        }
+
+        span
+        {
+            font-weight: 900;
+            margin-right: 5px;
+            margin-right: 0.416666666666667vw;
+        }
+
+        button
+        {
+            @include appearance(none);
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            color: dodgerblue;
+            font-size: 20px;
+            font-size: 1.666666666666667vw;
+            margin: 0;
+            padding: 0;
+            text-decoration: underline;
         }
     }
 
-    input[type="checkbox"]
+    #brand
     {
-        cursor: crosshair;
+        color: black;
+        font-family: fantasy;
+        font-weight: 900;
+        text-decoration: none;
     }
 
-    input:disabled,
-    input[disabled]
+    .character-sheet
     {
-        cursor: not-allowed !important;
-    }
+        background-size: 100%;
+        height: calc(100vw * (11/8.5));
+        margin: auto;
+        position: relative;
+        width: 100vw;
 
-    textarea
-    {
-        resize: none;
-    }
-}
-
-#page-1
-{
-    background-image: url('../img/character_pg_1.svg');
-}
-
-#page-2
-{
-    background-image: url('../img/character_pg_2.svg');
-}
-
-#page-3
-{
-    background-image: url('../img/character_pg_3.svg');
-}
-
-.character_name input
-{
-    font-family: fantasy;
-    font-size: 32px;
-    font-size: 2.666666666666667vw;
-    font-weight: 900;
-    padding: 21px 80px 25px 52px;
-    padding: 1.75vw 6.666666666666667vw 2.083333333333333vw 4.333333333333333vw;
-    width: 448px;
-    width: 37.333333333333333vw;
-}
-
-#character_name
-{
-    left: 58px;
-    left: 4.833333333333333vw;
-    top: 98px;
-    top: 8.166666666666667vw;
-}
-
-#details
-{
-    div
-    {
-        &:nth-child(3n+1) input
+        label
         {
-            left: 529px;
-            left: 44.083333333333333vw;
-            width: 212px;
-            width: 17.666666666666667vw;
+            display: none;
         }
 
-        &:nth-child(3n+2) input
+        figure,
+        input,
+        textarea
         {
-            left: 751px;
-            left: 62.583333333333333vw;
-            width: 179px;
-            width: 14.916666666666667vw;
+            position: absolute;
         }
 
-        &:nth-child(3n+3) input
+        input,
+        textarea
         {
-            left: 940px;
-            left: 78.333333333333333vw;
-            width: 174px;
-            width: 14.5vw;
+            @include appearance(none);
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-size: 1.333333333333333vw;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+        }
+
+        input[type="text"],
+        textarea
+        {
+            &:hover
+            {
+                cursor: text;
+            }
+        }
+
+        input[type="checkbox"]
+        {
+            cursor: crosshair;
+        }
+
+        input:disabled,
+        input[disabled]
+        {
+            cursor: not-allowed !important;
+        }
+
+        textarea
+        {
+            resize: none;
         }
     }
 
-    input
+    #page-1
     {
-        padding: 2px 0;
-        padding: 0.166666666666667vw 0;
+        background-image: url('../img/character_pg_1.svg');
     }
 
-    .top input
+    #page-2
     {
-        top: 103px;
-        top: 8.583333333333333vw;
+        background-image: url('../img/character_pg_2.svg');
     }
 
-    .bottom input
+    #page-3
     {
-        top: 154px;
-        top: 12.833333333333333vw;
-    }
-}
-
-#player_name
-{
-    color: black;
-}
-
-.abilities
-{
-    input
-    {
-        text-align: center;
+        background-image: url('../img/character_pg_3.svg');
     }
 
-    .score input
+    .character_name input
     {
-        font-size: 36px;
-        font-size: 3vw;
-        font-weight: 100;
-        left: 63px;
-        left: 5.25vw;
-        padding: 30px 0 39px 0;
-        padding: 2.5vw 0 3.25vw 0;
-        width: 97px;
-        width: 8.083333333333333vw;
+        font-family: fantasy;
+        font-size: 32px;
+        font-size: 2.666666666666667vw;
+        font-weight: 900;
+        padding: 21px 80px 25px 52px;
+        padding: 1.75vw 6.666666666666667vw 2.083333333333333vw 4.333333333333333vw;
+        width: 448px;
+        width: 37.333333333333333vw;
     }
 
-    .bonus input
+    #character_name
     {
-        left: 87px;
-        left: 7.25vw;
-        padding: 12px 0 11px 0;
-        padding: 1vw 0 0.916666666666667vw 0;
-        width: 50px;
-        width: 4.166666666666667vw;
-    }
-}
-
-#strength
-{
-    .score input
-    {
-        top: 277px;
-        top: 23.083333333333333vw;
-
+        left: 58px;
+        left: 4.833333333333333vw;
+        top: 98px;
+        top: 8.166666666666667vw;
     }
 
-    .bonus input
+    #details
     {
-        top: 358px;
-        top: 29.833333333333333vw;
-    }
-}
+        div
+        {
+            &:nth-child(3n+1) input
+            {
+                left: 529px;
+                left: 44.083333333333333vw;
+                width: 212px;
+                width: 17.666666666666667vw;
+            }
 
-#dexterity
-{
-    .score input
-    {
-        top: 418px;
-        top: 34.833333333333333vw;
-    }
+            &:nth-child(3n+2) input
+            {
+                left: 751px;
+                left: 62.583333333333333vw;
+                width: 179px;
+                width: 14.916666666666667vw;
+            }
 
-    .bonus input
-    {
-        top: 499px;
-        top: 41.583333333333333vw;
-    }
-}
+            &:nth-child(3n+3) input
+            {
+                left: 940px;
+                left: 78.333333333333333vw;
+                width: 174px;
+                width: 14.5vw;
+            }
+        }
 
-#constitution
-{
-    .score input
-    {
-        top: 558px;
-        top: 46.5vw;
-    }
+        input
+        {
+            padding: 2px 0;
+            padding: 0.166666666666667vw 0;
+        }
 
-    .bonus input
-    {
-        top: 639px;
-        top: 53.25vw;
-    }
-}
+        .top input
+        {
+            top: 103px;
+            top: 8.583333333333333vw;
+        }
 
-#intelligence
-{
-    .score input
-    {
-        top: 699px;
-        top: 58.25vw;
-    }
-
-    .bonus input
-    {
-        top: 780px;
-        top: 65vw;
-    }
-}
-
-#wisdom
-{
-    .score input
-    {
-        top: 839px;
-        top: 69.916666666666667vw;
+        .bottom input
+        {
+            top: 154px;
+            top: 12.833333333333333vw;
+        }
     }
 
-    .bonus input
+    #player_name
     {
-        top: 920px;
-        top: 76.666666666666667vw;
-    }
-}
-
-#charisma
-{
-    .score input
-    {
-        top: 979px;
-        top: 81.583333333333333vw;
+        color: black;
     }
 
-    .bonus input
+    .abilities
     {
-        top: 1060px;
-        top: 88.333333333333333vw;
-    }
-}
+        input
+        {
+            text-align: center;
+        }
 
-.passive
-{
-    input
-    {
-        text-align: center;
-        padding: 19px 0;
-        padding: 1.583333333333333vw 0;
-        width: 55px;
-        width: 4.583333333333333vw;
-    }
+        .score input
+        {
+            font-size: 36px;
+            font-size: 3vw;
+            font-weight: 100;
+            left: 63px;
+            left: 5.25vw;
+            padding: 30px 0 39px 0;
+            padding: 2.5vw 0 3.25vw 0;
+            width: 97px;
+            width: 8.083333333333333vw;
+        }
 
-    #inspiration
-    {
-        left: 183px;
-        left: 15.25vw;
-        top: 246px;
-        top: 20.5vw;
-    }
-
-    #proficiency_bonus
-    {
-        left: 185px;
-        left: 15.416666666666667vw;
-        top: 320px;
-        top: 26.666666666666667vw;
+        .bonus input
+        {
+            left: 87px;
+            left: 7.25vw;
+            padding: 12px 0 11px 0;
+            padding: 1vw 0 0.916666666666667vw 0;
+            width: 50px;
+            width: 4.166666666666667vw;
+        }
     }
 
-    #passive_wisdom
+    #strength
     {
+        .score input
+        {
+            top: 277px;
+            top: 23.083333333333333vw;
+
+        }
+
+        .bonus input
+        {
+            top: 358px;
+            top: 29.833333333333333vw;
+        }
+    }
+
+    #dexterity
+    {
+        .score input
+        {
+            top: 418px;
+            top: 34.833333333333333vw;
+        }
+
+        .bonus input
+        {
+            top: 499px;
+            top: 41.583333333333333vw;
+        }
+    }
+
+    #constitution
+    {
+        .score input
+        {
+            top: 558px;
+            top: 46.5vw;
+        }
+
+        .bonus input
+        {
+            top: 639px;
+            top: 53.25vw;
+        }
+    }
+
+    #intelligence
+    {
+        .score input
+        {
+            top: 699px;
+            top: 58.25vw;
+        }
+
+        .bonus input
+        {
+            top: 780px;
+            top: 65vw;
+        }
+    }
+
+    #wisdom
+    {
+        .score input
+        {
+            top: 839px;
+            top: 69.916666666666667vw;
+        }
+
+        .bonus input
+        {
+            top: 920px;
+            top: 76.666666666666667vw;
+        }
+    }
+
+    #charisma
+    {
+        .score input
+        {
+            top: 979px;
+            top: 81.583333333333333vw;
+        }
+
+        .bonus input
+        {
+            top: 1060px;
+            top: 88.333333333333333vw;
+        }
+    }
+
+    .passive
+    {
+        input
+        {
+            text-align: center;
+            padding: 19px 0;
+            padding: 1.583333333333333vw 0;
+            width: 55px;
+            width: 4.583333333333333vw;
+        }
+
+        #inspiration
+        {
+            left: 183px;
+            left: 15.25vw;
+            top: 246px;
+            top: 20.5vw;
+        }
+
+        #proficiency_bonus
+        {
+            left: 185px;
+            left: 15.416666666666667vw;
+            top: 320px;
+            top: 26.666666666666667vw;
+        }
+
+        #passive_wisdom
+        {
+            left: 55px;
+            left: 4.583333333333333vw;
+            top: 1148px;
+            top: 95.666666666666667vw;
+        }
+    }
+
+    #throws
+    {
+        input
+        {
+            &:checked:after
+            {
+                content: '\2713';
+                height: 0;
+                left: 5%;
+                line-height: 0;
+                position: absolute;
+                top: 45%;
+                width: 0;
+            }
+        }
+
+        .class_save input,
+        .class_skill input
+        {
+            border-radius: 50%;
+            height: 11px;
+            height: 0.916666666666667vw;
+            left: 199px;
+            left: 16.583333333333333vw;
+            width: 11px;
+            width: 0.916666666666667vw;
+        }
+
+        .saving_throw input,
+        .score input
+        {
+            font-size: 12px;
+            font-size: 1vw;
+            font-weight: 100;
+            height: 25px;
+            height: 2.083333333333333vw;
+            padding: 10px 0 0 0;
+            padding: 0.833333333333333vw 0 0 0;
+            text-align: center;
+            width: 28px;
+            width: 2.333333333333333vw;
+        }
+
+        .saving_throw input
+        {
+            left: 221px;
+            left: 18.416666666666667vw;
+        }
+
+        .score input
+        {
+            left: 220px;
+            left: 18.333333333333333vw;
+        }
+    }
+
+    #strength_save
+    {
+        .class_save input
+        {
+            top: 409px;
+            top: 34.083333333333333vw;
+        }
+
+        .saving_throw input
+        {
+            top: 397px;
+            top: 33.083333333333333vw;
+        }
+    }
+
+    #dexterity_save
+    {
+        .class_save input
+        {
+            top: 435px;
+            top: 36.25vw;
+        }
+
+        .saving_throw input
+        {
+            top: 423px;
+            top: 35.25vw;
+        }
+    }
+
+    #constitution_save
+    {
+        .class_save input
+        {
+            top: 462px;
+            top: 38.5vw;
+        }
+
+        .saving_throw input
+        {
+            top: 450px;
+            top: 37.5vw;
+        }
+    }
+
+    #intelligence_save
+    {
+        .class_save input
+        {
+            top: 488px;
+            top: 40.666666666666667vw;
+        }
+
+        .saving_throw input
+        {
+            top: 476px;
+            top: 39.666666666666667vw;
+        }
+    }
+
+    #wisdom_save
+    {
+        .class_save input
+        {
+            top: 515px;
+            top: 42.916666666666667vw;
+        }
+
+        .saving_throw input
+        {
+            top: 503px;
+            top: 41.916666666666667vw;
+        }
+    }
+
+    #charisma_save
+    {
+        .class_save input
+        {
+            top: 541px;
+            top: 45.083333333333333vw;
+        }
+
+        .saving_throw input
+        {
+            top: 529px;
+            top: 44.083333333333333vw;
+        }
+    }
+
+    #acrobatics
+    {
+        .class_skill input
+        {
+            top: 635px;
+            top: 52.916666666666667vw;
+        }
+
+        .score input
+        {
+            top: 623px;
+            top: 51.916666666666667vw;
+        }
+    }
+
+    #animal_handling
+    {
+        .class_skill input
+        {
+            top: 661px;
+            top: 55.083333333333333vw;
+        }
+
+        .score input
+        {
+            top: 649px;
+            top: 54.083333333333333vw;
+        }
+    }
+
+    #arcana
+    {
+        .class_skill input
+        {
+            top: 688px;
+            top: 57.333333333333333vw;
+        }
+
+        .score input
+        {
+            top: 676px;
+            top: 56.333333333333333vw;
+        }
+    }
+
+    #athletics
+    {
+        .class_skill input
+        {
+            top: 714px;
+            top: 59.5vw;
+        }
+
+        .score input
+        {
+            top: 702px;
+            top: 58.5vw;
+        }
+    }
+
+    #deception
+    {
+        .class_skill input
+        {
+            top: 741px;
+            top: 61.75vw;
+        }
+
+        .score input
+        {
+            top: 729px;
+            top: 60.75vw;
+        }
+    }
+
+    #history
+    {
+        .class_skill input
+        {
+            top: 767px;
+            top: 63.916666666666667vw;
+        }
+
+        .score input
+        {
+            top: 755px;
+            top: 62.916666666666667vw;
+        }
+    }
+
+    #insight
+    {
+        .class_skill input
+        {
+            top: 794px;
+            top: 66.166666666666667vw;
+        }
+
+        .score input
+        {
+            top: 782px;
+            top: 65.166666666666667vw;
+        }
+    }
+
+    #intimidation
+    {
+        .class_skill input
+        {
+            top: 820px;
+            top: 68.333333333333333vw;
+        }
+
+        .score input
+        {
+            top: 808px;
+            top: 67.333333333333333vw;
+        }
+    }
+
+    #investigation
+    {
+        .class_skill input
+        {
+            top: 847px;
+            top: 70.583333333333333vw;
+        }
+
+        .score input
+        {
+            top: 835px;
+            top: 69.583333333333333vw;
+        }
+    }
+
+    #medicine
+    {
+        .class_skill input
+        {
+            top: 873px;
+            top: 72.75vw;
+        }
+
+        .score input
+        {
+            top: 861px;
+            top: 71.75vw;
+        }
+    }
+
+    #nature
+    {
+        .class_skill input
+        {
+            top: 900px;
+            top: 75vw;
+        }
+
+        .score input
+        {
+            top: 888px;
+            top: 74vw;
+        }
+    }
+
+    #perception
+    {
+        .class_skill input
+        {
+            top: 926px;
+            top: 77.166666666666667vw;
+        }
+
+        .score input
+        {
+            top: 914px;
+            top: 76.166666666666667vw;
+        }
+    }
+
+    #performance
+    {
+        .class_skill input
+        {
+            top: 953px;
+            top: 79.416666666666667vw;
+        }
+
+        .score input
+        {
+            top: 941px;
+            top: 78.416666666666667vw;
+        }
+    }
+
+    #persuasion
+    {
+        .class_skill input
+        {
+            top: 979px;
+            top: 81.583333333333333vw;
+        }
+
+        .score input
+        {
+            top: 967px;
+            top: 80.583333333333333vw;
+        }
+    }
+
+    #religion
+    {
+        .class_skill input
+        {
+            top: 1006px;
+            top: 83.833333333333333vw;
+        }
+
+        .score input
+        {
+            top: 993px;
+            top: 82.75vw;
+        }
+    }
+
+    #sleight_of_hand
+    {
+        .class_skill input
+        {
+            top: 1032px;
+            top: 86vw;
+        }
+
+        .score input
+        {
+            top: 1020px;
+            top: 85vw;
+        }
+    }
+
+    #stealth
+    {
+        .class_skill input
+        {
+            top: 1058px;
+            top: 88.166666666666667vw;
+        }
+
+        .score input
+        {
+            top: 1046px;
+            top: 87.166666666666667vw;
+        }
+    }
+
+    #survival
+    {
+        .class_skill input
+        {
+            top: 1085px;
+            top: 90.416666666666667vw;
+        }
+
+        .score input
+        {
+            top: 1073px;
+            top: 89.416666666666667vw;
+        }
+    }
+
+    #other_proficiencies_and_languages
+    {
+        font-size: 12px;
+        font-size: 1vw;
+        height: 282px;
+        height: 23.5vw;
         left: 55px;
         left: 4.583333333333333vw;
-        top: 1148px;
-        top: 95.666666666666667vw;
-    }
-}
-
-#throws
-{
-    input
-    {
-        &:checked:after
-        {
-            content: '\2713';
-            height: 0;
-            left: 5%;
-            line-height: 0;
-            position: absolute;
-            top: 45%;
-            width: 0;
-        }
+        padding: 5px 10px 21px 10px;
+        padding: 0.416666666666667vw 0.833333333333333vw 1.75vw 0.833333333333333vw;
+        top: 1221px;
+        top: 101.75vw;
+        width: 349px;
+        width: 29.083333333333333vw;
     }
 
-    .class_save input,
-    .class_skill input
+    #armor_class,
+    #initiative,
+    #speed
     {
-        border-radius: 50%;
-        height: 11px;
-        height: 0.916666666666667vw;
-        left: 199px;
-        left: 16.583333333333333vw;
-        width: 11px;
-        width: 0.916666666666667vw;
-    }
-
-    .saving_throw input,
-    .score input
-    {
-        font-size: 12px;
-        font-size: 1vw;
+        font-size: 32px;
+        font-size: 2.666666666666667vw;
         font-weight: 100;
-        height: 25px;
-        height: 2.083333333333333vw;
-        padding: 10px 0 0 0;
-        padding: 0.833333333333333vw 0 0 0;
         text-align: center;
-        width: 28px;
-        width: 2.333333333333333vw;
     }
 
-    .saving_throw input
+    #armor_class
     {
-        left: 221px;
-        left: 18.416666666666667vw;
+        height: 108px;
+        height: 9vw;
+        left: 438px;
+        left: 36.5vw;
+        padding: 10px 10px 30px 10px;
+        padding: 0.833333333333333vw 0.833333333333333vw 2.5vw 0.833333333333333vw;
+        top: 260px;
+        top: 21.666666666666667vw;
+        width: 94px;
+        width: 7.833333333333333vw;
     }
 
-    .score input
+    #initiative,
+    #speed
     {
-        left: 220px;
-        left: 18.333333333333333vw;
-    }
-}
-
-#strength_save
-{
-    .class_save input
-    {
-        top: 409px;
-        top: 34.083333333333333vw;
-    }
-
-    .saving_throw input
-    {
-        top: 397px;
-        top: 33.083333333333333vw;
-    }
-}
-
-#dexterity_save
-{
-    .class_save input
-    {
-        top: 435px;
-        top: 36.25vw;
-    }
-
-    .saving_throw input
-    {
-        top: 423px;
-        top: 35.25vw;
-    }
-}
-
-#constitution_save
-{
-    .class_save input
-    {
-        top: 462px;
-        top: 38.5vw;
-    }
-
-    .saving_throw input
-    {
-        top: 450px;
-        top: 37.5vw;
-    }
-}
-
-#intelligence_save
-{
-    .class_save input
-    {
-        top: 488px;
-        top: 40.666666666666667vw;
-    }
-
-    .saving_throw input
-    {
-        top: 476px;
-        top: 39.666666666666667vw;
-    }
-}
-
-#wisdom_save
-{
-    .class_save input
-    {
-        top: 515px;
-        top: 42.916666666666667vw;
-    }
-
-    .saving_throw input
-    {
-        top: 503px;
-        top: 41.916666666666667vw;
-    }
-}
-
-#charisma_save
-{
-    .class_save input
-    {
-        top: 541px;
-        top: 45.083333333333333vw;
-    }
-
-    .saving_throw input
-    {
-        top: 529px;
-        top: 44.083333333333333vw;
-    }
-}
-
-#acrobatics
-{
-    .class_skill input
-    {
-        top: 635px;
-        top: 52.916666666666667vw;
-    }
-
-    .score input
-    {
-        top: 623px;
-        top: 51.916666666666667vw;
-    }
-}
-
-#animal_handling
-{
-    .class_skill input
-    {
-        top: 661px;
-        top: 55.083333333333333vw;
-    }
-
-    .score input
-    {
-        top: 649px;
-        top: 54.083333333333333vw;
-    }
-}
-
-#arcana
-{
-    .class_skill input
-    {
-        top: 688px;
-        top: 57.333333333333333vw;
-    }
-
-    .score input
-    {
-        top: 676px;
-        top: 56.333333333333333vw;
-    }
-}
-
-#athletics
-{
-    .class_skill input
-    {
-        top: 714px;
-        top: 59.5vw;
-    }
-
-    .score input
-    {
-        top: 702px;
-        top: 58.5vw;
-    }
-}
-
-#deception
-{
-    .class_skill input
-    {
-        top: 741px;
-        top: 61.75vw;
-    }
-
-    .score input
-    {
-        top: 729px;
-        top: 60.75vw;
-    }
-}
-
-#history
-{
-    .class_skill input
-    {
-        top: 767px;
-        top: 63.916666666666667vw;
-    }
-
-    .score input
-    {
-        top: 755px;
-        top: 62.916666666666667vw;
-    }
-}
-
-#insight
-{
-    .class_skill input
-    {
-        top: 794px;
-        top: 66.166666666666667vw;
-    }
-
-    .score input
-    {
-        top: 782px;
-        top: 65.166666666666667vw;
-    }
-}
-
-#intimidation
-{
-    .class_skill input
-    {
-        top: 820px;
-        top: 68.333333333333333vw;
-    }
-
-    .score input
-    {
-        top: 808px;
-        top: 67.333333333333333vw;
-    }
-}
-
-#investigation
-{
-    .class_skill input
-    {
-        top: 847px;
-        top: 70.583333333333333vw;
-    }
-
-    .score input
-    {
-        top: 835px;
-        top: 69.583333333333333vw;
-    }
-}
-
-#medicine
-{
-    .class_skill input
-    {
-        top: 873px;
-        top: 72.75vw;
-    }
-
-    .score input
-    {
-        top: 861px;
-        top: 71.75vw;
-    }
-}
-
-#nature
-{
-    .class_skill input
-    {
-        top: 900px;
-        top: 75vw;
-    }
-
-    .score input
-    {
-        top: 888px;
-        top: 74vw;
-    }
-}
-
-#perception
-{
-    .class_skill input
-    {
-        top: 926px;
-        top: 77.166666666666667vw;
-    }
-
-    .score input
-    {
-        top: 914px;
-        top: 76.166666666666667vw;
-    }
-}
-
-#performance
-{
-    .class_skill input
-    {
-        top: 953px;
-        top: 79.416666666666667vw;
-    }
-
-    .score input
-    {
-        top: 941px;
-        top: 78.416666666666667vw;
-    }
-}
-
-#persuasion
-{
-    .class_skill input
-    {
-        top: 979px;
-        top: 81.583333333333333vw;
-    }
-
-    .score input
-    {
-        top: 967px;
-        top: 80.583333333333333vw;
-    }
-}
-
-#religion
-{
-    .class_skill input
-    {
-        top: 1006px;
-        top: 83.833333333333333vw;
-    }
-
-    .score input
-    {
-        top: 993px;
-        top: 82.75vw;
-    }
-}
-
-#sleight_of_hand
-{
-    .class_skill input
-    {
-        top: 1032px;
-        top: 86vw;
-    }
-
-    .score input
-    {
-        top: 1020px;
-        top: 85vw;
-    }
-}
-
-#stealth
-{
-    .class_skill input
-    {
-        top: 1058px;
-        top: 88.166666666666667vw;
-    }
-
-    .score input
-    {
-        top: 1046px;
-        top: 87.166666666666667vw;
-    }
-}
-
-#survival
-{
-    .class_skill input
-    {
-        top: 1085px;
-        top: 90.416666666666667vw;
-    }
-
-    .score input
-    {
-        top: 1073px;
-        top: 89.416666666666667vw;
-    }
-}
-
-#other_proficiencies_and_languages
-{
-    font-size: 12px;
-    font-size: 1vw;
-    height: 282px;
-    height: 23.5vw;
-    left: 55px;
-    left: 4.583333333333333vw;
-    padding: 5px 10px 21px 10px;
-    padding: 0.416666666666667vw 0.833333333333333vw 1.75vw 0.833333333333333vw;
-    top: 1221px;
-    top: 101.75vw;
-    width: 349px;
-    width: 29.083333333333333vw;
-}
-
-#armor_class,
-#initiative,
-#speed
-{
-    font-size: 32px;
-    font-size: 2.666666666666667vw;
-    font-weight: 100;
-    text-align: center;
-}
-
-#armor_class
-{
-    height: 108px;
-    height: 9vw;
-    left: 438px;
-    left: 36.5vw;
-    padding: 10px 10px 30px 10px;
-    padding: 0.833333333333333vw 0.833333333333333vw 2.5vw 0.833333333333333vw;
-    top: 260px;
-    top: 21.666666666666667vw;
-    width: 94px;
-    width: 7.833333333333333vw;
-}
-
-#initiative,
-#speed
-{
-    height: 96px;
-    height: 8vw;
-    padding: 10px 10px 25px 10px;
-    padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
-    top: 266px;
-    top: 22.166666666666667vw;
-    width: 103px;
-    width: 8.583333333333333vw;
-}
-
-#initiative
-{
-    left: 544px;
-    left: 45.333333333333333vw;
-}
-
-#speed
-{
-    left: 659px;
-    left: 54.916666666666667vw;
-}
-
-#hit_point_maximum
-{
-    left: 570px;
-    left: 47.5vw;
-    padding: 1px 5px;
-    padding: 0.083333333333333vw 0.416666666666667vw;
-    top: 387px;
-    top: 32.25vw;
-    width: 176px;
-    width: 14.666666666666667vw;
-}
-
-#current_hit_points,
-#temporary_hit_points
-{
-    font-size: 24px;
-    font-size: 2vw;
-    left: 439px;
-    left: 36.583333333333333vw;
-    padding: 10px 10px 25px 10px;
-    padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
-    width: 322px;
-    width: 26.833333333333333vw;
-}
-
-#current_hit_points
-{
-    height: 89px;
-    height: 7.416666666666667vw;
-    top: 410px;
-    top: 34.166666666666667vw;
-}
-
-#temporary_hit_points
-{
-    height: 98px;
-    height: 8.166666666666667vw;
-    top: 505px;
-    top: 42.083333333333333vw;
-}
-
-#total_hit_dice
-{
-    left: 484px;
-    left: 40.333333333333333vw;
-    padding: 1px 5px;
-    padding: 0.083333333333333vw 0.416666666666667vw;
-    top: 623px;
-    top: 51.916666666666667vw;
-    width: 95px;
-    width: 7.916666666666667vw;
-}
-
-#hit_dice
-{
-    font-size: 24px;
-    font-size: 2vw;
-    height: 70px;
-    height: 5.833333333333333vw;
-    left: 439px;
-    left: 36.583333333333333vw;
-    padding: 10px 10px 25px 10px;
-    padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
-    text-align: center;
-    top: 644px;
-    top: 53.666666666666667vw;
-    width: 153px;
-    width: 12.75vw;
-}
-
-#death_saves
-{
-    input
-    {
-        border-radius: 50%;
-        height: 19px;
-        height: 1.583333333333333vw;
-        width: 19px;
-        width: 1.583333333333333vw;
-
-        &:checked:after
-        {
-            content: '\00d7';
-            height: 0;
-            left: 24%;
-            line-height: 0;
-            position: absolute;
-            top: 45%;
-            width: 0;
-        }
-    }
-
-    .success input
-    {
-        top: 631px;
-        top: 52.583333333333333vw;
-    }
-
-    .failure input
-    {
-        top: 661px;
-        top: 55.083333333333333vw;
-    }
-
-    .success:nth-child(1),
-    .failure:nth-child(4)
-    {
-        input
-        {
-            left: 678px;
-            left: 56.5vw;
-        }
-    }
-
-    .success:nth-child(2),
-    .failure:nth-child(5)
-    {
-        input
-        {
-            left: 703px;
-            left: 58.583333333333333vw;
-        }
-    }
-
-    .success:nth-child(3),
-    .failure:nth-child(6)
-    {
-        input
-        {
-            left: 728px;
-            left: 60.666666666666667vw;
-        }
-    }
-}
-
-#weapons
-{
-    input
-    {
-        padding: 1px 5px;
-        padding: 0.083333333333333vw 0.416666666666667vw;
-        height: 31px;
-        height: 2.583333333333333vw;
-    }
-
-    .weapon:nth-child(1) input
-    {
-        top: 769px;
-        top: 64.083333333333333vw;
-    }
-
-    .weapon:nth-child(2) input
-    {
-        top: 809px;
-        top: 67.416666666666667vw;
-    }
-
-    .weapon:nth-child(3) input
-    {
-        top: 849px;
-        top: 70.75vw;
-    }
-
-    .name,
-    .damage_and_type
-    {
-        input
-        {
-            font-size: 10px;
-            font-size: 0.833333333333333vw;
-        }
-    }
-
-    .name input
-    {
-        left: 437px;
-        left: 36.416666666666667vw;
-        width: 125px;
-        width: 10.416666666666667vw;
-    }
-
-    .atk_bonus input
-    {
-        left: 571px;
-        left: 47.583333333333333vw;
-        text-align: center;
-        width: 61px;
-        width: 5.083333333333333vw;
-    }
-
-    .damage_and_type input
-    {
-        left: 641px;
-        left: 53.416666666666667vw;
-        width: 122px;
-        width: 10.166666666666667vw;
-    }
-}
-
-#attacks_and_spellcasting
-{
-    font-size: 12px;
-    font-size: 1vw;
-    height: 246px;
-    height: 20.5vw;
-    left: 425px;
-    left: 35.416666666666667vw;
-    padding: 5px 10px 20px 10px;
-    padding: 0.416666666666667vw 0.833333333333333vw 1.666666666666667vw 0.833333333333333vw;
-    top: 890px;
-    top: 74.166666666666667vw;
-    width: 351px;
-    width: 29.25vw;
-}
-
-#money
-{
-    input
-    {
-        font-size: 12px;
-        font-size: 1vw;
-        height: 45px;
-        height: 3.75vw;
-        left: 435px;
-        left: 36.25vw;
-        padding: 5px 15px;
-        padding: 0.416666666666667vw 1.25vw;
-        text-align: center;
-        width: 86px;
-        width: 7.166666666666667vw;
-    }
-
-    #cp
-    {
-        top: 1169px;
-        top: 97.416666666666667vw;
-    }
-
-    #sp
-    {
-        top: 1220px;
-        top: 101.666666666666667vw;
-    }
-
-    #ep
-    {
-        top: 1270px;
-        top: 105.833333333333333vw;
-    }
-
-    #gp
-    {
-        top: 1322px;
-        top: 110.166666666666667vw;
-    }
-
-    #pp
-    {
-        top: 1372px;
-        top: 114.333333333333333vw;
-    }
-}
-
-#equipment
-{
-    font-size: 10px;
-    font-size: 0.833333333333333vw;
-    height: 352px;
-    height: 29.333333333333333vw;
-    left: 521px;
-    left: 43.416666666666667vw;
-    padding: 5px 15px 25px 5px;
-    padding: 0.416666666666667vw 1.25vw 2.083333333333333vw 0.416666666666667vw;
-    top: 1153px;
-    top: 96.083333333333333vw;
-    width: 256px;
-    width: 21.333333333333333vw;
-}
-
-#story
-{
-    textarea
-    {
-        font-size: 12px;
-        font-size: 1vw;
-        height: 97px;
-        height: 8.083333333333333vw;
-        left: 809px;
-        left: 67.416666666666667vw;
+        height: 96px;
+        height: 8vw;
         padding: 10px 10px 25px 10px;
         padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
-        width: 323px;
-        width: 26.916666666666667vw;
-    }
-
-    #personality_traits
-    {
-        height: 125px;
-        height: 10.416666666666667vw;
         top: 266px;
         top: 22.166666666666667vw;
+        width: 103px;
+        width: 8.583333333333333vw;
     }
 
-    #ideals
+    #initiative
     {
-        top: 402px;
-        top: 33.5vw;
+        left: 544px;
+        left: 45.333333333333333vw;
     }
 
-    #bonds
+    #speed
     {
-        top: 511px;
-        top: 42.583333333333333vw;
+        left: 659px;
+        left: 54.916666666666667vw;
     }
 
-    #flaws
+    #hit_point_maximum
     {
-        top: 619px;
-        top: 51.583333333333333vw;
-    }
-}
-
-#features_and_traits
-{
-    font-size: 12px;
-    font-size: 1vw;
-    height: 759px;
-    height: 63.25vw;
-    left: 794px;
-    left: 66.166666666666667vw;
-    padding: 10px 15px 25px 15px;
-    padding: 0.833333333333333vw 1.25vw 2.083333333333333vw 1.25vw;
-    top: 746px;
-    top: 62.166666666666667vw;
-    width: 353px;
-    width: 29.416666666666667vw;
-}
-
-#character_name_2
-{
-    color: black;
-    left: 60px;
-    left: 5vw;
-    top: 103px;
-    top: 8.583333333333333vw;
-}
-
-#stats
-{
-    div
-    {
-        &:nth-child(3n+1) input
-        {
-            left: 521px;
-            left: 43.416666666666667vw;
-            width: 222px;
-            width: 18.5vw;
-        }
-
-        &:nth-child(3n+2) input
-        {
-            left: 743px;
-            left: 61.916666666666667vw;
-            width: 189px;
-            width: 15.75vw;
-        }
-
-        &:nth-child(3n+3) input
-        {
-            left: 932px;
-            left: 77.666666666666667vw;
-            width: 191px;
-            width: 15.916666666666667vw;
-        }
+        left: 570px;
+        left: 47.5vw;
+        padding: 1px 5px;
+        padding: 0.083333333333333vw 0.416666666666667vw;
+        top: 387px;
+        top: 32.25vw;
+        width: 176px;
+        width: 14.666666666666667vw;
     }
 
-    input
-    {
-        padding: 2px 0;
-        padding: 0.166666666666667vw 0;
-    }
-
-    .top input
-    {
-        top: 109px;
-        top: 9.083333333333333vw;
-    }
-
-    .bottom input
-    {
-        top: 160px;
-        top: 13.333333333333333vw;
-    }
-}
-
-#character_appearance
-{
-    left: 66px;
-    left: 5.5vw;
-    top: 257px;
-    top: 21.416666666666667vw;
-    width: 325px;
-    width: 27.083333333333333vw;
-
-    img
-    {
-        margin: auto;
-        max-height: 425px;
-        max-height: 35.416666666666667vw;
-    }
-}
-
-#allies_and_organizations
-{
-    height: 470px;
-    height: 39.166666666666667vw;
-    left: 423px;
-    left: 35.25vw;
-    padding: 15px 15px 25px 15px;
-    padding: 1.25vw 1.25vw 2.083333333333333vw 1.25vw;
-    top: 244px;
-    top: 20.333333333333333vw;
-    width: 388px;
-    width: 32.333333333333333vw;
-}
-
-#faction_name
-{
-    height: 31px;
-    height: 2.583333333333333vw;
-    left: 826px;
-    left: 68.833333333333333vw;
-    padding: 5px;
-    padding: 0.416666666666667vw;
-    top: 301px;
-    top: 25.083333333333333vw;
-    width: 277px;
-    width: 23.083333333333333vw;
-}
-
-#faction_symbol
-{
-    left: 835px;
-    left: 69.583333333333333vw;
-    top: 332px;
-    top: 27.666666666666667vw;
-    width: 258px;
-    width: 21.5vw;
-
-    img
-    {
-        margin: auto;
-        max-height: 225px;
-        max-height: 18.75vw;
-    }
-}
-
-#character_backstory,
-#additional_features_and_traits,
-#treasure
-{
-    font-size: 12px;
-    font-size: 1vw;
-    padding: 10px 15px 25px 15px;
-    padding: 0.833333333333333vw 1.25vw 2.083333333333333vw 1.25vw;
-}
-
-#character_backstory
-{
-    height: 760px;
-    height: 63.333333333333333vw;
-    left: 52px;
-    left: 4.333333333333333vw;
-    top: 745px;
-    top: 62.083333333333333vw;
-    width: 354px;
-    width: 29.5vw;
-}
-
-#additional_features_and_traits,
-#treasure
-{
-    left: 424px;
-    left: 35.333333333333333vw;
-    width: 723px;
-    width: 60.25vw;
-}
-
-#additional_features_and_traits
-{
-    height: 437px;
-    height: 36.416666666666667vw;
-    top: 725px;
-    top: 60.416666666666667vw;
-}
-
-#treasure
-{
-    height: 331px;
-    height: 27.583333333333333vw;
-    top: 1173px;
-    top: 97.75vw;
-}
-
-#spellcasting_class
-{
-    font-size: 24px;
-    font-size: 2vw;
-    font-weight: 100;
-    height: 110px;
-    height: 9.166666666666667vw;
-    left: 60px;
-    left: 5vw;
-    padding: 20px 15px 58px 45px;
-    padding: 1.666666666666667vw 1.25vw 4.833333333333333vw 3.75vw;
-    top: 107px;
-    top: 8.916666666666667vw;
-    width: 452px;
-    width: 37.666666666666667vw;
-}
-
-#spell_power input
-{
-    font-size: 32px;
-    font-size: 2.666666666666667vw;
-    height: 67px;
-    height: 5.583333333333333vw;
-    padding: 10px 20px;
-    padding: 0.833333333333333vw 1.666666666666667vw;
-    text-align: center;
-    top: 100px;
-    top: 8.333333333333333vw;
-    width: 148px;
-    width: 12.333333333333333vw;
-}
-
-#spellcasting_ability
-{
-    left: 546px;
-    left: 45.5vw;
-}
-
-#spell_save_dc
-{
-    left: 743px;
-    left: 61.916666666666667vw;
-}
-
-#spell_attack_bonus
-{
-    left: 947px;
-    left: 78.916666666666667vw;
-}
-
-.spell_column
-{
-    height: 1236px;
-    height: 103vw;
-    position: absolute;
-    top: 259px;
-    top: 21.583333333333333vw;
-    width: 372px;
-    width: 31vw;
-}
-
-#spell_column_1
-{
-    left: 43px;
-    left: 3.583333333333333vw;
-}
-
-#spell_column_2
-{
-    left: 414px;
-    left: 34.5vw;
-}
-
-#spell_column_3
-{
-    left: 785px;
-    left: 65.416666666666667vw;
-}
-
-.spell_column_inner
-{
-    height: 100%;
-    position: relative;
-    width: 100%;
-}
-
-#spell_level_0_slots_total,
-#spell_level_0_slots_expended,
-#spell_list_0 .spell_prepared
-{
-    display: none;
-}
-
-.spell_slots_total,
-.spell_slots_expended
-{
-    input
+    #current_hit_points,
+    #temporary_hit_points
     {
         font-size: 24px;
         font-size: 2vw;
-        height: 55px;
-        height: 4.583333333333333vw;
-        padding: 10px 25px 10px 10px;
-        padding: 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw 0.833333333333333vw;
+        left: 439px;
+        left: 36.583333333333333vw;
+        padding: 10px 10px 25px 10px;
+        padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
+        width: 322px;
+        width: 26.833333333333333vw;
+    }
+
+    #current_hit_points
+    {
+        height: 89px;
+        height: 7.416666666666667vw;
+        top: 410px;
+        top: 34.166666666666667vw;
+    }
+
+    #temporary_hit_points
+    {
+        height: 98px;
+        height: 8.166666666666667vw;
+        top: 505px;
+        top: 42.083333333333333vw;
+    }
+
+    #total_hit_dice
+    {
+        left: 484px;
+        left: 40.333333333333333vw;
+        padding: 1px 5px;
+        padding: 0.083333333333333vw 0.416666666666667vw;
+        top: 623px;
+        top: 51.916666666666667vw;
+        width: 95px;
+        width: 7.916666666666667vw;
+    }
+
+    #hit_dice
+    {
+        font-size: 24px;
+        font-size: 2vw;
+        height: 70px;
+        height: 5.833333333333333vw;
+        left: 439px;
+        left: 36.583333333333333vw;
+        padding: 10px 10px 25px 10px;
+        padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
         text-align: center;
-    }
-}
-
-.spell_slots_total input
-{
-    width: 80px;
-    width: 6.666666666666667vw;
-}
-
-.spell_slots_expended input
-{
-    width: 186px;
-    width: 15.5vw;
-}
-
-#spell_column_1
-{
-    .spell_slots_total input
-    {
-        left: 55px;
-        left: 4.583333333333333vw;
+        top: 644px;
+        top: 53.666666666666667vw;
+        width: 153px;
+        width: 12.75vw;
     }
 
-    .spell_slots_expended input
+    #death_saves
     {
-        left: 157px;
-        left: 13.083333333333333vw;
-    }
-}
-
-#spell_column_2
-{
-    .spell_slots_total input
-    {
-        left: 54px;
-        left: 4.5vw;
-    }
-
-    .spell_slots_expended input
-    {
-        left: 156px;
-        left: 13vw;
-    }
-}
-
-#spell_column_3
-{
-    .spell_slots_total input
-    {
-        left: 50px;
-        left: 4.166666666666667vw;
-    }
-
-    .spell_slots_expended input
-    {
-        left: 152px;
-        left: 12.666666666666667vw;
-    }
-}
-
-#spell_level_1_slots_total,
-#spell_level_1_slots_expended
-{
-    top: 349px;
-    top: 29.083333333333333vw;
-}
-
-#spell_level_2_slots_total,
-#spell_level_2_slots_expended
-{
-    top: 798px;
-    top: 66.5vw;
-}
-
-#spell_level_3_slots_total,
-#spell_level_3_slots_expended,
-#spell_level_6_slots_total,
-#spell_level_6_slots_expended
-{
-    top: 20px;
-    top: 1.666666666666667vw;
-}
-
-#spell_level_4_slots_total,
-#spell_level_4_slots_expended
-{
-    top: 463px;
-    top: 38.583333333333333vw;
-}
-
-#spell_level_5_slots_total,
-#spell_level_5_slots_expended
-{
-    top: 907px;
-    top: 75.583333333333333vw;
-}
-
-#spell_level_7_slots_total,
-#spell_level_7_slots_expended
-{
-    top: 354px;
-    top: 29.5vw;
-}
-
-#spell_level_8_slots_total,
-#spell_level_8_slots_expended
-{
-    top: 687px;
-    top: 57.25vw;
-}
-
-#spell_level_9_slots_total,
-#spell_level_9_slots_expended
-{
-    top: 962px;
-    top: 80.166666666666667vw;
-}
-
-.spell_list
-{
-    height: 50px;
-    height: 4.166666666666667vw;
-    position: absolute;
-}
-
-#spell_column_1 .spell_list
-{
-    left: 19px;
-    left: 1.583333333333333vw;
-    width: 337px;
-    width: 28.083333333333333vw;
-}
-
-#spell_list_0
-{
-    height: 219px;
-    height: 18.25vw;
-    top: 76px;
-    top: 6.333333333333333vw;
-}
-
-#spell_list_1,
-#spell_list_2
-{
-    height: 357px;
-    height: 29.75vw;
-}
-
-#spell_list_1
-{
-    top: 411px;
-    top: 34.25vw;
-}
-
-#spell_list_2
-{
-    top: 855px;
-    top: 71.25vw;
-}
-
-#spell_column_2 .spell_list
-{
-    left: 17px;
-    left: 1.416666666666667vw;
-    width: 339px;
-    width: 28.25vw;
-}
-
-#spell_list_3,
-#spell_list_4
-{
-    height: 357px;
-    height: 29.75vw;
-}
-
-#spell_list_3
-{
-    top: 78px;
-    top: 6.5vw;
-}
-
-#spell_list_4
-{
-    top: 520px;
-    top: 43.333333333333333vw;
-}
-
-#spell_list_5
-{
-    height: 248px;
-    height: 20.666666666666667vw;
-    top: 964px;
-    top: 80.333333333333333vw;
-}
-
-#spell_column_3 .spell_list
-{
-    left: 13px;
-    left: 1.083333333333333vw;
-    width: 339px;
-    width: 28.25vw;
-}
-
-#spell_list_6,
-#spell_list_7
-{
-    height: 248px;
-    height: 20.666666666666667vw;
-}
-
-#spell_list_6
-{
-    top: 77px;
-    top: 6.416666666666667vw;
-}
-
-#spell_list_7
-{
-    top: 410px;
-    top: 34.166666666666667vw;
-}
-
-#spell_list_8,
-#spell_list_9
-{
-    height: 192px;
-    height: 16vw;
-}
-
-#spell_list_8
-{
-    top: 743px;
-    top: 61.916666666666667vw;
-}
-
-#spell_list_9
-{
-    top: 1019px;
-    top: 84.916666666666667vw;
-}
-
-.spell
-{
-    height: 27.5px;
-    height: 2.291666666666667vw;
-    position: relative;
-
-    input
-    {
-        font-size: 12px;
-        font-size: 1vw;
-        font-weight: 100;
-    }
-}
-
-.spell_prepared input
-{
-    height: 13px;
-    height: 1.083333333333333vw;
-    width: 13px;
-    width: 1.083333333333333vw;
-
-    &:checked:after
-    {
-        content: '\2713';
-        height: 0;
-        left: 18%;
-        line-height: 0;
-        position: absolute;
-        top: 55%;
-        width: 0;
-    }
-}
-
-.spell_name input
-{
-    height: 27px;
-    height: 2.25vw;
-    padding: 10px 5px 0 5px;
-    padding: 0.833333333333333vw 0.416666666666667vw 0 0.416666666666667vw;
-    top: 0;
-}
-
-#spell_column_1
-{
-    .spell_prepared input
-    {
-        left: 1px;
-        left: 0.083333333333333vw;
-        top: 15px;
-        top: 1.25vw;
-    }
-
-    .spell_name input
-    {
-        left: 17px;
-        left: 1.416666666666667vw;
-        width: 320px;
-        width: 26.666666666666667vw;
-    }
-
-    #spell_level_1_spell_0_spell
-    {
-        background: white;
-        left: 23px;
-        left: 1.916666666666667vw;
-        width: 314px;
-        width: 26.166666666666667vw;
-    }
-}
-
-#spell_column_2
-{
-    .spell_prepared input
-    {
-        left: 2px;
-        left: 0.166666666666667vw;
-        top: 15px;
-        top: 1.25vw;
-    }
-
-    .spell_name input
-    {
-        left: 19px;
-        left: 1.583333333333333vw;
-        width: 320px;
-        width: 26.666666666666667vw;
-    }
-}
-
-#spell_column_3
-{
-    .spell_prepared input
-    {
-        left: 2px;
-        left: 0.166666666666667vw;
-        top: 16px;
-        top: 1.333333333333333vw;
-    }
-
-    .spell_name input
-    {
-        left: 19px;
-        left: 1.583333333333333vw;
-        width: 320px;
-        width: 26.666666666666667vw;
-    }
-}
-
-#auth
-{
-    fieldset
-    {
-        border: 0;
-        margin: 16px auto;
-        margin: 1.333333333333333vw auto;
-        padding: 16px 0;
-        padding: 1.333333333333333vw 0;
-        width: 1000px;
-        width: 83.333333333333333vw;
-    }
-
-    &:after
-    {
-        clear: both;
-        content: '';
-        display: table;
-    }
-
-    label,
-    input
-    {
-        float: left;
-    }
-
-    label
-    {
-        font-weight: 100;
-        width: 25%;
-    }
-
-    button,
-    input
-    {
-        @include appearance(none);
-        background-color: transparent;
-        border: 0;
-        border-radius: 0;
-        box-sizing: border-box;
-        font-size: 20px;
-        font-size: 1.666666666666667vw;
-        font-weight: 900;
-        margin: 0;
-        outline: 0;
-    }
-
-    button
-    {
-        background: black;
-        color: white;
-        cursor: pointer;
-        display: block;
-        margin: auto;
-        padding: 15px 30px;
-        padding: 1.25vw 2.5vw;
-    }
-
-    input
-    {
-        box-shadow: 0 0 1px 0 rgba(black, 0.5);
-        box-shadow: 0 0 0.083333333333333vw 0 rgba(black, 0.5);
-        padding: 8px 12px;
-        padding: 0.666666666666667vw 1vw;
-    }
-
-    .form-text
-    {
-        label
-        {
-            padding: 8px 5% 8px 0;
-            padding: 0.666666666666667vw 5% 0.666666666666667vw 0;
-            text-align: right;
-            width: 25%;
-        }
-
         input
         {
-            width: 70%;
-        }
-    }
+            border-radius: 50%;
+            height: 19px;
+            height: 1.583333333333333vw;
+            width: 19px;
+            width: 1.583333333333333vw;
 
-    .form-checkbox
-    {
-        label
-        {
-            cursor: pointer;
-            padding: 8px 0 8px 5%;
-            padding: 0.666666666666667vw 0 0.666666666666667vw 5%;
-            text-decoration: underline;
-            width: 70%;
-        }
-
-        input
-        {
-            visibility: hidden;
-            width: 25%;
-
-            &:checked + label:after
+            &:checked:after
             {
-                content: '\2714';
-                margin-left: 8px;
-                margin-left: 0.666666666666667vw;
+                content: '\00d7';
+                height: 0;
+                left: 24%;
+                line-height: 0;
                 position: absolute;
+                top: 45%;
+                width: 0;
+            }
+        }
+
+        .success input
+        {
+            top: 631px;
+            top: 52.583333333333333vw;
+        }
+
+        .failure input
+        {
+            top: 661px;
+            top: 55.083333333333333vw;
+        }
+
+        .success:nth-child(1),
+        .failure:nth-child(4)
+        {
+            input
+            {
+                left: 678px;
+                left: 56.5vw;
+            }
+        }
+
+        .success:nth-child(2),
+        .failure:nth-child(5)
+        {
+            input
+            {
+                left: 703px;
+                left: 58.583333333333333vw;
+            }
+        }
+
+        .success:nth-child(3),
+        .failure:nth-child(6)
+        {
+            input
+            {
+                left: 728px;
+                left: 60.666666666666667vw;
             }
         }
     }
 
-    aside
+    #weapons
     {
-        margin: 64px auto;
-        margin: 5.333333333333333vw auto;
-        width: 320px;
-        width: 26.666666666666667vw;
-
-        a
+        input
         {
-            color: black;
-            display: block;
-            margin: 32px 0;
-            margin: 2.666666666666667vw 0;
+            padding: 1px 5px;
+            padding: 0.083333333333333vw 0.416666666666667vw;
+            height: 31px;
+            height: 2.583333333333333vw;
+        }
+
+        .weapon:nth-child(1) input
+        {
+            top: 769px;
+            top: 64.083333333333333vw;
+        }
+
+        .weapon:nth-child(2) input
+        {
+            top: 809px;
+            top: 67.416666666666667vw;
+        }
+
+        .weapon:nth-child(3) input
+        {
+            top: 849px;
+            top: 70.75vw;
+        }
+
+        .name,
+        .damage_and_type
+        {
+            input
+            {
+                font-size: 10px;
+                font-size: 0.833333333333333vw;
+            }
+        }
+
+        .name input
+        {
+            left: 437px;
+            left: 36.416666666666667vw;
+            width: 125px;
+            width: 10.416666666666667vw;
+        }
+
+        .atk_bonus input
+        {
+            left: 571px;
+            left: 47.583333333333333vw;
             text-align: center;
+            width: 61px;
+            width: 5.083333333333333vw;
+        }
+
+        .damage_and_type input
+        {
+            left: 641px;
+            left: 53.416666666666667vw;
+            width: 122px;
+            width: 10.166666666666667vw;
+        }
+    }
+
+    #attacks_and_spellcasting
+    {
+        font-size: 12px;
+        font-size: 1vw;
+        height: 246px;
+        height: 20.5vw;
+        left: 425px;
+        left: 35.416666666666667vw;
+        padding: 5px 10px 20px 10px;
+        padding: 0.416666666666667vw 0.833333333333333vw 1.666666666666667vw 0.833333333333333vw;
+        top: 890px;
+        top: 74.166666666666667vw;
+        width: 351px;
+        width: 29.25vw;
+    }
+
+    #money
+    {
+        input
+        {
+            font-size: 12px;
+            font-size: 1vw;
+            height: 45px;
+            height: 3.75vw;
+            left: 435px;
+            left: 36.25vw;
+            padding: 5px 15px;
+            padding: 0.416666666666667vw 1.25vw;
+            text-align: center;
+            width: 86px;
+            width: 7.166666666666667vw;
+        }
+
+        #cp
+        {
+            top: 1169px;
+            top: 97.416666666666667vw;
+        }
+
+        #sp
+        {
+            top: 1220px;
+            top: 101.666666666666667vw;
+        }
+
+        #ep
+        {
+            top: 1270px;
+            top: 105.833333333333333vw;
+        }
+
+        #gp
+        {
+            top: 1322px;
+            top: 110.166666666666667vw;
+        }
+
+        #pp
+        {
+            top: 1372px;
+            top: 114.333333333333333vw;
+        }
+    }
+
+    #equipment
+    {
+        font-size: 10px;
+        font-size: 0.833333333333333vw;
+        height: 352px;
+        height: 29.333333333333333vw;
+        left: 521px;
+        left: 43.416666666666667vw;
+        padding: 5px 15px 25px 5px;
+        padding: 0.416666666666667vw 1.25vw 2.083333333333333vw 0.416666666666667vw;
+        top: 1153px;
+        top: 96.083333333333333vw;
+        width: 256px;
+        width: 21.333333333333333vw;
+    }
+
+    #story
+    {
+        textarea
+        {
+            font-size: 12px;
+            font-size: 1vw;
+            height: 97px;
+            height: 8.083333333333333vw;
+            left: 809px;
+            left: 67.416666666666667vw;
+            padding: 10px 10px 25px 10px;
+            padding: 0.833333333333333vw 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw;
+            width: 323px;
+            width: 26.916666666666667vw;
+        }
+
+        #personality_traits
+        {
+            height: 125px;
+            height: 10.416666666666667vw;
+            top: 266px;
+            top: 22.166666666666667vw;
+        }
+
+        #ideals
+        {
+            top: 402px;
+            top: 33.5vw;
+        }
+
+        #bonds
+        {
+            top: 511px;
+            top: 42.583333333333333vw;
+        }
+
+        #flaws
+        {
+            top: 619px;
+            top: 51.583333333333333vw;
+        }
+    }
+
+    #features_and_traits
+    {
+        font-size: 12px;
+        font-size: 1vw;
+        height: 759px;
+        height: 63.25vw;
+        left: 794px;
+        left: 66.166666666666667vw;
+        padding: 10px 15px 25px 15px;
+        padding: 0.833333333333333vw 1.25vw 2.083333333333333vw 1.25vw;
+        top: 746px;
+        top: 62.166666666666667vw;
+        width: 353px;
+        width: 29.416666666666667vw;
+    }
+
+    #character_name_2
+    {
+        color: black;
+        left: 60px;
+        left: 5vw;
+        top: 103px;
+        top: 8.583333333333333vw;
+    }
+
+    #stats
+    {
+        div
+        {
+            &:nth-child(3n+1) input
+            {
+                left: 521px;
+                left: 43.416666666666667vw;
+                width: 222px;
+                width: 18.5vw;
+            }
+
+            &:nth-child(3n+2) input
+            {
+                left: 743px;
+                left: 61.916666666666667vw;
+                width: 189px;
+                width: 15.75vw;
+            }
+
+            &:nth-child(3n+3) input
+            {
+                left: 932px;
+                left: 77.666666666666667vw;
+                width: 191px;
+                width: 15.916666666666667vw;
+            }
+        }
+
+        input
+        {
+            padding: 2px 0;
+            padding: 0.166666666666667vw 0;
+        }
+
+        .top input
+        {
+            top: 109px;
+            top: 9.083333333333333vw;
+        }
+
+        .bottom input
+        {
+            top: 160px;
+            top: 13.333333333333333vw;
+        }
+    }
+
+    #character_appearance
+    {
+        left: 66px;
+        left: 5.5vw;
+        top: 257px;
+        top: 21.416666666666667vw;
+        width: 325px;
+        width: 27.083333333333333vw;
+
+        img
+        {
+            margin: auto;
+            max-height: 425px;
+            max-height: 35.416666666666667vw;
+        }
+    }
+
+    #allies_and_organizations
+    {
+        height: 470px;
+        height: 39.166666666666667vw;
+        left: 423px;
+        left: 35.25vw;
+        padding: 15px 15px 25px 15px;
+        padding: 1.25vw 1.25vw 2.083333333333333vw 1.25vw;
+        top: 244px;
+        top: 20.333333333333333vw;
+        width: 388px;
+        width: 32.333333333333333vw;
+    }
+
+    #faction_name
+    {
+        height: 31px;
+        height: 2.583333333333333vw;
+        left: 826px;
+        left: 68.833333333333333vw;
+        padding: 5px;
+        padding: 0.416666666666667vw;
+        top: 301px;
+        top: 25.083333333333333vw;
+        width: 277px;
+        width: 23.083333333333333vw;
+    }
+
+    #faction_symbol
+    {
+        left: 835px;
+        left: 69.583333333333333vw;
+        top: 332px;
+        top: 27.666666666666667vw;
+        width: 258px;
+        width: 21.5vw;
+
+        img
+        {
+            margin: auto;
+            max-height: 225px;
+            max-height: 18.75vw;
+        }
+    }
+
+    #character_backstory,
+    #additional_features_and_traits,
+    #treasure
+    {
+        font-size: 12px;
+        font-size: 1vw;
+        padding: 10px 15px 25px 15px;
+        padding: 0.833333333333333vw 1.25vw 2.083333333333333vw 1.25vw;
+    }
+
+    #character_backstory
+    {
+        height: 760px;
+        height: 63.333333333333333vw;
+        left: 52px;
+        left: 4.333333333333333vw;
+        top: 745px;
+        top: 62.083333333333333vw;
+        width: 354px;
+        width: 29.5vw;
+    }
+
+    #additional_features_and_traits,
+    #treasure
+    {
+        left: 424px;
+        left: 35.333333333333333vw;
+        width: 723px;
+        width: 60.25vw;
+    }
+
+    #additional_features_and_traits
+    {
+        height: 437px;
+        height: 36.416666666666667vw;
+        top: 725px;
+        top: 60.416666666666667vw;
+    }
+
+    #treasure
+    {
+        height: 331px;
+        height: 27.583333333333333vw;
+        top: 1173px;
+        top: 97.75vw;
+    }
+
+    #spellcasting_class
+    {
+        font-size: 24px;
+        font-size: 2vw;
+        font-weight: 100;
+        height: 110px;
+        height: 9.166666666666667vw;
+        left: 60px;
+        left: 5vw;
+        padding: 20px 15px 58px 45px;
+        padding: 1.666666666666667vw 1.25vw 4.833333333333333vw 3.75vw;
+        top: 107px;
+        top: 8.916666666666667vw;
+        width: 452px;
+        width: 37.666666666666667vw;
+    }
+
+    #spell_power input
+    {
+        font-size: 32px;
+        font-size: 2.666666666666667vw;
+        height: 67px;
+        height: 5.583333333333333vw;
+        padding: 10px 20px;
+        padding: 0.833333333333333vw 1.666666666666667vw;
+        text-align: center;
+        top: 100px;
+        top: 8.333333333333333vw;
+        width: 148px;
+        width: 12.333333333333333vw;
+    }
+
+    #spellcasting_ability
+    {
+        left: 546px;
+        left: 45.5vw;
+    }
+
+    #spell_save_dc
+    {
+        left: 743px;
+        left: 61.916666666666667vw;
+    }
+
+    #spell_attack_bonus
+    {
+        left: 947px;
+        left: 78.916666666666667vw;
+    }
+
+    .spell_column
+    {
+        height: 1236px;
+        height: 103vw;
+        position: absolute;
+        top: 259px;
+        top: 21.583333333333333vw;
+        width: 372px;
+        width: 31vw;
+    }
+
+    #spell_column_1
+    {
+        left: 43px;
+        left: 3.583333333333333vw;
+    }
+
+    #spell_column_2
+    {
+        left: 414px;
+        left: 34.5vw;
+    }
+
+    #spell_column_3
+    {
+        left: 785px;
+        left: 65.416666666666667vw;
+    }
+
+    .spell_column_inner
+    {
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    #spell_level_0_slots_total,
+    #spell_level_0_slots_expended,
+    #spell_list_0 .spell_prepared
+    {
+        display: none;
+    }
+
+    .spell_slots_total,
+    .spell_slots_expended
+    {
+        input
+        {
+            font-size: 24px;
+            font-size: 2vw;
+            height: 55px;
+            height: 4.583333333333333vw;
+            padding: 10px 25px 10px 10px;
+            padding: 0.833333333333333vw 2.083333333333333vw 0.833333333333333vw 0.833333333333333vw;
+            text-align: center;
+        }
+    }
+
+    .spell_slots_total input
+    {
+        width: 80px;
+        width: 6.666666666666667vw;
+    }
+
+    .spell_slots_expended input
+    {
+        width: 186px;
+        width: 15.5vw;
+    }
+
+    #spell_column_1
+    {
+        .spell_slots_total input
+        {
+            left: 55px;
+            left: 4.583333333333333vw;
+        }
+
+        .spell_slots_expended input
+        {
+            left: 157px;
+            left: 13.083333333333333vw;
+        }
+    }
+
+    #spell_column_2
+    {
+        .spell_slots_total input
+        {
+            left: 54px;
+            left: 4.5vw;
+        }
+
+        .spell_slots_expended input
+        {
+            left: 156px;
+            left: 13vw;
+        }
+    }
+
+    #spell_column_3
+    {
+        .spell_slots_total input
+        {
+            left: 50px;
+            left: 4.166666666666667vw;
+        }
+
+        .spell_slots_expended input
+        {
+            left: 152px;
+            left: 12.666666666666667vw;
+        }
+    }
+
+    #spell_level_1_slots_total,
+    #spell_level_1_slots_expended
+    {
+        top: 349px;
+        top: 29.083333333333333vw;
+    }
+
+    #spell_level_2_slots_total,
+    #spell_level_2_slots_expended
+    {
+        top: 798px;
+        top: 66.5vw;
+    }
+
+    #spell_level_3_slots_total,
+    #spell_level_3_slots_expended,
+    #spell_level_6_slots_total,
+    #spell_level_6_slots_expended
+    {
+        top: 20px;
+        top: 1.666666666666667vw;
+    }
+
+    #spell_level_4_slots_total,
+    #spell_level_4_slots_expended
+    {
+        top: 463px;
+        top: 38.583333333333333vw;
+    }
+
+    #spell_level_5_slots_total,
+    #spell_level_5_slots_expended
+    {
+        top: 907px;
+        top: 75.583333333333333vw;
+    }
+
+    #spell_level_7_slots_total,
+    #spell_level_7_slots_expended
+    {
+        top: 354px;
+        top: 29.5vw;
+    }
+
+    #spell_level_8_slots_total,
+    #spell_level_8_slots_expended
+    {
+        top: 687px;
+        top: 57.25vw;
+    }
+
+    #spell_level_9_slots_total,
+    #spell_level_9_slots_expended
+    {
+        top: 962px;
+        top: 80.166666666666667vw;
+    }
+
+    .spell_list
+    {
+        height: 50px;
+        height: 4.166666666666667vw;
+        position: absolute;
+    }
+
+    #spell_column_1 .spell_list
+    {
+        left: 19px;
+        left: 1.583333333333333vw;
+        width: 337px;
+        width: 28.083333333333333vw;
+    }
+
+    #spell_list_0
+    {
+        height: 219px;
+        height: 18.25vw;
+        top: 76px;
+        top: 6.333333333333333vw;
+    }
+
+    #spell_list_1,
+    #spell_list_2
+    {
+        height: 357px;
+        height: 29.75vw;
+    }
+
+    #spell_list_1
+    {
+        top: 411px;
+        top: 34.25vw;
+    }
+
+    #spell_list_2
+    {
+        top: 855px;
+        top: 71.25vw;
+    }
+
+    #spell_column_2 .spell_list
+    {
+        left: 17px;
+        left: 1.416666666666667vw;
+        width: 339px;
+        width: 28.25vw;
+    }
+
+    #spell_list_3,
+    #spell_list_4
+    {
+        height: 357px;
+        height: 29.75vw;
+    }
+
+    #spell_list_3
+    {
+        top: 78px;
+        top: 6.5vw;
+    }
+
+    #spell_list_4
+    {
+        top: 520px;
+        top: 43.333333333333333vw;
+    }
+
+    #spell_list_5
+    {
+        height: 248px;
+        height: 20.666666666666667vw;
+        top: 964px;
+        top: 80.333333333333333vw;
+    }
+
+    #spell_column_3 .spell_list
+    {
+        left: 13px;
+        left: 1.083333333333333vw;
+        width: 339px;
+        width: 28.25vw;
+    }
+
+    #spell_list_6,
+    #spell_list_7
+    {
+        height: 248px;
+        height: 20.666666666666667vw;
+    }
+
+    #spell_list_6
+    {
+        top: 77px;
+        top: 6.416666666666667vw;
+    }
+
+    #spell_list_7
+    {
+        top: 410px;
+        top: 34.166666666666667vw;
+    }
+
+    #spell_list_8,
+    #spell_list_9
+    {
+        height: 192px;
+        height: 16vw;
+    }
+
+    #spell_list_8
+    {
+        top: 743px;
+        top: 61.916666666666667vw;
+    }
+
+    #spell_list_9
+    {
+        top: 1019px;
+        top: 84.916666666666667vw;
+    }
+
+    .spell
+    {
+        height: 27.5px;
+        height: 2.291666666666667vw;
+        position: relative;
+
+        input
+        {
+            font-size: 12px;
+            font-size: 1vw;
+            font-weight: 100;
+        }
+    }
+
+    .spell_prepared input
+    {
+        height: 13px;
+        height: 1.083333333333333vw;
+        width: 13px;
+        width: 1.083333333333333vw;
+
+        &:checked:after
+        {
+            content: '\2713';
+            height: 0;
+            left: 18%;
+            line-height: 0;
+            position: absolute;
+            top: 55%;
+            width: 0;
+        }
+    }
+
+    .spell_name input
+    {
+        height: 27px;
+        height: 2.25vw;
+        padding: 10px 5px 0 5px;
+        padding: 0.833333333333333vw 0.416666666666667vw 0 0.416666666666667vw;
+        top: 0;
+    }
+
+    #spell_column_1
+    {
+        .spell_prepared input
+        {
+            left: 1px;
+            left: 0.083333333333333vw;
+            top: 15px;
+            top: 1.25vw;
+        }
+
+        .spell_name input
+        {
+            left: 17px;
+            left: 1.416666666666667vw;
+            width: 320px;
+            width: 26.666666666666667vw;
+        }
+
+        #spell_level_1_spell_0_spell
+        {
+            background: white;
+            left: 23px;
+            left: 1.916666666666667vw;
+            width: 314px;
+            width: 26.166666666666667vw;
+        }
+    }
+
+    #spell_column_2
+    {
+        .spell_prepared input
+        {
+            left: 2px;
+            left: 0.166666666666667vw;
+            top: 15px;
+            top: 1.25vw;
+        }
+
+        .spell_name input
+        {
+            left: 19px;
+            left: 1.583333333333333vw;
+            width: 320px;
+            width: 26.666666666666667vw;
+        }
+    }
+
+    #spell_column_3
+    {
+        .spell_prepared input
+        {
+            left: 2px;
+            left: 0.166666666666667vw;
+            top: 16px;
+            top: 1.333333333333333vw;
+        }
+
+        .spell_name input
+        {
+            left: 19px;
+            left: 1.583333333333333vw;
+            width: 320px;
+            width: 26.666666666666667vw;
+        }
+    }
+
+    #auth
+    {
+        fieldset
+        {
+            border: 0;
+            margin: 16px auto;
+            margin: 1.333333333333333vw auto;
+            padding: 16px 0;
+            padding: 1.333333333333333vw 0;
+            width: 1000px;
+            width: 83.333333333333333vw;
+        }
+
+        &:after
+        {
+            clear: both;
+            content: '';
+            display: table;
+        }
+
+        label,
+        input
+        {
+            float: left;
+        }
+
+        label
+        {
+            font-weight: 100;
+            width: 25%;
+        }
+
+        button,
+        input
+        {
+            @include appearance(none);
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-size: 1.666666666666667vw;
+            font-weight: 900;
+            margin: 0;
+            outline: 0;
+        }
+
+        button
+        {
+            background: black;
+            color: white;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            padding: 15px 30px;
+            padding: 1.25vw 2.5vw;
+        }
+
+        input
+        {
+            box-shadow: 0 0 1px 0 rgba(black, 0.5);
+            box-shadow: 0 0 0.083333333333333vw 0 rgba(black, 0.5);
+            padding: 8px 12px;
+            padding: 0.666666666666667vw 1vw;
+        }
+
+        .form-text
+        {
+            label
+            {
+                padding: 8px 5% 8px 0;
+                padding: 0.666666666666667vw 5% 0.666666666666667vw 0;
+                text-align: right;
+                width: 25%;
+            }
+
+            input
+            {
+                width: 70%;
+            }
+        }
+
+        .form-checkbox
+        {
+            label
+            {
+                cursor: pointer;
+                padding: 8px 0 8px 5%;
+                padding: 0.666666666666667vw 0 0.666666666666667vw 5%;
+                text-decoration: underline;
+                width: 70%;
+            }
+
+            input
+            {
+                visibility: hidden;
+                width: 25%;
+
+                &:checked + label:after
+                {
+                    content: '\2714';
+                    margin-left: 8px;
+                    margin-left: 0.666666666666667vw;
+                    position: absolute;
+                }
+            }
+        }
+
+        aside
+        {
+            margin: 64px auto;
+            margin: 5.333333333333333vw auto;
+            width: 320px;
+            width: 26.666666666666667vw;
+
+            a
+            {
+                color: black;
+                display: block;
+                margin: 32px 0;
+                margin: 2.666666666666667vw 0;
+                text-align: center;
+            }
         }
     }
 }
