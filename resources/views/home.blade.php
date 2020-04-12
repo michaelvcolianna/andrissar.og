@@ -141,94 +141,14 @@
             </section>
 
             <section>
-                <input name="toggles[skills_throws]" type="hidden" value="0">
-                <input class="toggle" name="toggles[skills_throws]" id="toggle_skills_throws" type="checkbox" value="1" {{ $character->toggles['skills_throws'] ? 'checked' : '' }}>
-                <label class="toggle_label" for="toggle_skills_throws">
-                    Skills &amp; Throws
+                <input name="toggles[skills]" type="hidden" value="0">
+                <input class="toggle" name="toggles[skills]" id="toggle_skills" type="checkbox" value="1" {{ $character->toggles['skills'] ? 'checked' : '' }}>
+                <label class="toggle_label" for="toggle_skills">
+                    Skills
                 </label>
 
                 <div class="expander">
                     <div id="throws">
-                        <p>
-                            Saving Throws
-                        </p>
-
-                        <div class="save" id="strength_save">
-                            <div class="class_save">
-                                <label for="strength_class_save">Strength Class Save?</label>
-                                <input name="strength[class_save]" type="hidden" value="0"><input name="strength[class_save]" id="strength_class_save" type="checkbox" value="1" {{ $character->strength['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="strength_saving_throw">Strength Saving Throw</label>
-                                <input name="strength[saving_throw]" id="strength_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->strength['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <div class="save" id="dexterity_save">
-                            <div class="class_save">
-                                <label for="dexterity_class_save">Dexterity Class Save?</label>
-                                <input name="dexterity[class_save]" type="hidden" value="0"><input name="dexterity[class_save]" id="dexterity_class_save" type="checkbox" value="1" {{ $character->dexterity['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="dexterity_saving_throw">Dexterity Saving Throw</label>
-                                <input name="dexterity[saving_throw]" id="dexterity_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->dexterity['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <div class="save" id="constitution_save">
-                            <div class="class_save">
-                                <label for="constitution_class_save">Constitution Class Save?</label>
-                                <input name="constitution[class_save]" type="hidden" value="0"><input name="constitution[class_save]" id="constitution_class_save" type="checkbox" value="1" {{ $character->constitution['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="constitution_saving_throw">Constitution Saving Throw</label>
-                                <input name="constitution[saving_throw]" id="constitution_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->constitution['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <div class="save" id="intelligence_save">
-                            <div class="class_save">
-                                <label for="intelligence_class_save">Intelligence Class Save?</label>
-                                <input name="intelligence[class_save]" type="hidden" value="0"><input name="intelligence[class_save]" id="intelligence_class_save" type="checkbox" value="1" {{ $character->intelligence['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="intelligence_saving_throw">Intelligence Saving Throw</label>
-                                <input name="intelligence[saving_throw]" id="intelligence_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->intelligence['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <div class="save" id="wisdom_save">
-                            <div class="class_save">
-                                <label for="wisdom_class_save">Wisdom Class Save?</label>
-                                <input name="wisdom[class_save]" type="hidden" value="0"><input name="wisdom[class_save]" id="wisdom_class_save" type="checkbox" value="1" {{ $character->wisdom['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="wisdom_saving_throw">Wisdom Saving Throw</label>
-                                <input name="wisdom[saving_throw]" id="wisdom_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->wisdom['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <div class="save" id="charisma_save">
-                            <div class="class_save">
-                                <label for="charisma_class_save">Charisma Class Save?</label>
-                                <input name="charisma[class_save]" type="hidden" value="0"><input name="charisma[class_save]" id="charisma_class_save" type="checkbox" value="1" {{ $character->charisma['class_save'] ? 'checked' : '' }}>
-                            </div>
-
-                            <div class="saving_throw">
-                                <label for="charisma_saving_throw">Charisma Saving Throw</label>
-                                <input name="charisma[saving_throw]" id="charisma_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->charisma['saving_throw'] }}">
-                            </div>
-                        </div>
-
-                        <p>
-                            Skills
-                        </p>
-
                         <div class="skill" id="acrobatics">
                             <div class="class_skill">
                                 <label for="acrobatics_class_skill">Acrobatics Class Skill?</label>
@@ -445,6 +365,98 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section>
+                <input name="toggles[throws]" type="hidden" value="0">
+                <input class="toggle" name="toggles[throws]" id="toggle_throws" type="checkbox" value="1" {{ $character->toggles['throws'] ? 'checked' : '' }}>
+                <label class="toggle_label" for="toggle_throws">
+                    Throws
+                </label>
+
+                <div class="expander">
+                    <div id="throws">
+                        <p>
+                            Saves
+                        </p>
+
+                        <div class="save" id="strength_save">
+                            <div class="class_save">
+                                <label for="strength_class_save">Strength Class Save?</label>
+                                <input name="strength[class_save]" type="hidden" value="0"><input name="strength[class_save]" id="strength_class_save" type="checkbox" value="1" {{ $character->strength['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="strength_saving_throw">Strength Saving Throw</label>
+                                <input name="strength[saving_throw]" id="strength_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->strength['saving_throw'] }}">
+                            </div>
+                        </div>
+
+                        <div class="save" id="dexterity_save">
+                            <div class="class_save">
+                                <label for="dexterity_class_save">Dexterity Class Save?</label>
+                                <input name="dexterity[class_save]" type="hidden" value="0"><input name="dexterity[class_save]" id="dexterity_class_save" type="checkbox" value="1" {{ $character->dexterity['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="dexterity_saving_throw">Dexterity Saving Throw</label>
+                                <input name="dexterity[saving_throw]" id="dexterity_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->dexterity['saving_throw'] }}">
+                            </div>
+                        </div>
+
+                        <div class="save" id="constitution_save">
+                            <div class="class_save">
+                                <label for="constitution_class_save">Constitution Class Save?</label>
+                                <input name="constitution[class_save]" type="hidden" value="0"><input name="constitution[class_save]" id="constitution_class_save" type="checkbox" value="1" {{ $character->constitution['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="constitution_saving_throw">Constitution Saving Throw</label>
+                                <input name="constitution[saving_throw]" id="constitution_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->constitution['saving_throw'] }}">
+                            </div>
+                        </div>
+
+                        <div class="save" id="intelligence_save">
+                            <div class="class_save">
+                                <label for="intelligence_class_save">Intelligence Class Save?</label>
+                                <input name="intelligence[class_save]" type="hidden" value="0"><input name="intelligence[class_save]" id="intelligence_class_save" type="checkbox" value="1" {{ $character->intelligence['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="intelligence_saving_throw">Intelligence Saving Throw</label>
+                                <input name="intelligence[saving_throw]" id="intelligence_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->intelligence['saving_throw'] }}">
+                            </div>
+                        </div>
+
+                        <div class="save" id="wisdom_save">
+                            <div class="class_save">
+                                <label for="wisdom_class_save">Wisdom Class Save?</label>
+                                <input name="wisdom[class_save]" type="hidden" value="0"><input name="wisdom[class_save]" id="wisdom_class_save" type="checkbox" value="1" {{ $character->wisdom['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="wisdom_saving_throw">Wisdom Saving Throw</label>
+                                <input name="wisdom[saving_throw]" id="wisdom_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->wisdom['saving_throw'] }}">
+                            </div>
+                        </div>
+
+                        <div class="save" id="charisma_save">
+                            <div class="class_save">
+                                <label for="charisma_class_save">Charisma Class Save?</label>
+                                <input name="charisma[class_save]" type="hidden" value="0"><input name="charisma[class_save]" id="charisma_class_save" type="checkbox" value="1" {{ $character->charisma['class_save'] ? 'checked' : '' }}>
+                            </div>
+
+                            <div class="saving_throw">
+                                <label for="charisma_saving_throw">Charisma Saving Throw</label>
+                                <input name="charisma[saving_throw]" id="charisma_saving_throw" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" value="{{ $character->charisma['saving_throw'] }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        Others
+                    </p>
 
                     <div class="passive">
                         <label for="inspiration">Inspiration</label>
