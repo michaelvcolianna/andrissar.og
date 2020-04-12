@@ -49,10 +49,11 @@ class Character extends Model
         'death_saves' => 'array',
         'weapons' => 'array',
         'spells' => 'array',
+        'toggles' => 'array',
     ];
 
     /**
-     * Get the post that owns the comment.
+     * Get the user that owns the character.
      */
     public function user()
     {

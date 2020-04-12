@@ -70,7 +70,6 @@ class CreateCharactersTable extends Migration
             $table->string('spell_attack_bonus')->nullable()->default(0);
 
             # Abilities
-            # {"score":10,"bonus":0,"class_save":false,"saving_throw":0}
             $table->json('strength')->nullable()->default('{"score":10,"bonus":0,"class_save":false,"saving_throw":0}');
             $table->json('dexterity')->nullable()->default('{"score":10,"bonus":0,"class_save":false,"saving_throw":0}');
             $table->json('constitution')->nullable()->default('{"score":10,"bonus":0,"class_save":false,"saving_throw":0}');
@@ -79,7 +78,6 @@ class CreateCharactersTable extends Migration
             $table->json('charisma')->nullable()->default('{"score":10,"bonus":0,"class_save":false,"saving_throw":0}');
 
             # Skills
-            # {"class_skill":false,"score":0}
             $table->json('acrobatics')->nullable()->default('{"class_skill":false,"score":0}');
             $table->json('animal_handling')->nullable()->default('{"class_skill":false,"score":0}');
             $table->json('arcana')->nullable()->default('{"class_skill":false,"score":0}');
@@ -100,16 +98,16 @@ class CreateCharactersTable extends Migration
             $table->json('survival')->nullable()->default('{"class_skill":false,"score":0}');
 
             # Death Saves
-            # {"successes":[false,false,false],"failures":[false,false,false]}
             $table->json('death_saves')->nullable()->default('{"successes":[false,false,false],"failures":[false,false,false]}');
 
             # Weapons
-            # [{"name":"","atk_bonus":0,"damage_and_type":""},...]
             $table->json('weapons')->nullable()->default('[{"name":"","atk_bonus":0,"damage_and_type":""},{"name":"","atk_bonus":0,"damage_and_type":""},{"name":"","atk_bonus":0,"damage_and_type":""}]');
 
             # Spells
-            # [{"slots_total":0,"slots_expended":0,"list":["",""]},...]
             $table->json('spells')->nullable()->default('[{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]},{"slots_total":0,"slots_expended":0,"list":[{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""},{"prepared":false,"spell":""}]}]');
+
+            # Toggles
+            $table->json('toggles')->nullable()->default('{"character_information":true,"ability_scores":false,"skills_throws":false,"health_defense":false,"attacking":false,"gear":false,"story_background":false,"biological_information":false,"other_information":false,"spellcaster_information":false,"spells":[false,false,false,false,false,false,false,false,false,false]}');
         });
     }
 

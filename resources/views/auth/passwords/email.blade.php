@@ -20,5 +20,13 @@
 
             <button type="submit">Send password reset link</button>
         </form>
+
+        <aside>
+            @if(Route::has('register'))
+                <a href="{{ route('register') }}">Create an account</a>
+            @endif
+
+            <a href="{{ route('login') }}">Login</a>
+        </aside>
     </div>
 @endsection

@@ -4,7 +4,7 @@
     <div id="auth">
         <form action="{{ route('password.update') }}" method="post">
             @csrf
-            <input name="token" name="hidden" value="{{ $token }}">
+            <input name="token" type="hidden" value="{{ $token }}">
 
             <fieldset class="form-text">
                 <label for="email">E-mail address</label>
@@ -23,5 +23,13 @@
 
             <button type="submit">Reset password</button>
         </form>
+
+        <aside>
+            @if(Route::has('register'))
+                <a href="{{ route('register') }}">Create an account</a>
+            @endif
+
+            <a href="{{ route('login') }}">Login</a>
+        </aside>
     </div>
 @endsection

@@ -19,5 +19,13 @@
 
             <button type="submit">Request another e-mail</button>
         </form>
+
+        <aside>
+            @if(Route::has('register'))
+                <a href="{{ route('register') }}">Create an account</a>
+            @endif
+
+            <a href="{{ route('login') }}">Login</a>
+        </aside>
     </div>
 @endsection

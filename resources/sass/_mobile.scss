@@ -1,0 +1,557 @@
+*
+{
+    outline: 0;
+}
+
+html
+{
+    font-size: 6.25vw;
+}
+
+body
+{
+    background: white;
+    color: black;
+    font: 100 1rem/1rem sans-serif;
+    margin: 0;
+}
+
+button,
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea
+{
+    @include appearance(none);
+    background: transparent;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1rem;
+
+    #sheet &
+    {
+        // border: 0;
+        border-radius: 0;
+    }
+}
+
+fieldset
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+figcaption
+{
+    display: none;
+}
+
+figure
+{
+    margin: 0;
+}
+
+img
+{
+    display: block;
+    max-width: 100%;
+}
+
+textarea
+{
+    resize: none;
+}
+
+header
+{
+    background: white;
+    box-shadow: 0 0.05rem 0.15rem rgba(0,0,0,.5);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav
+{
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    height: 2.25rem;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+
+    span
+    {
+        font-weight: 900;
+    }
+}
+
+#brand
+{
+    color: black;
+    text-decoration: none;
+}
+
+#logout
+{
+    span
+    {
+        margin-right: 0.5rem;
+    }
+
+    button
+    {
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: underline;
+    }
+}
+
+#auth
+{
+    fieldset
+    {
+        padding: 1rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"]
+    {
+        border: 0.05rem solid rgba(black, 0.5);
+        box-sizing: border-box;
+        display: block;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    input[type="checkbox"]
+    {
+        display: none;
+
+        & + label
+        {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        &:checked + label:after
+        {
+            content: '\2714';
+            margin-left: 0.5rem;
+            position: absolute;
+        }
+    }
+
+    button
+    {
+        border: 0;
+        cursor: pointer;
+        margin-left: 1rem;
+        padding: 0;
+        text-decoration: underline;
+    }
+
+    aside
+    {
+        margin: 1rem;
+
+        a
+        {
+            color: black;
+            display: block;
+            padding: 1rem 0;
+        }
+    }
+}
+
+#sheet
+{
+    section
+    {
+        box-shadow: 0 0.15rem 0.15rem -0.15rem rgba(black, 0.5);
+        margin: 1rem 0;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .toggle
+    {
+        display: none;
+
+        &:checked + .toggle_label
+        {
+            text-decoration: none;
+
+            &:after
+            {
+                top: 0.3rem;
+                transform: rotate(0);
+            }
+
+            & + .expander
+            {
+                display: block;
+            }
+        }
+    }
+
+    .toggle_label
+    {
+        cursor: pointer;
+        font-weight: 400;
+        padding-right: 1rem;
+        position: relative;
+        text-decoration: underline;
+
+        &:after
+        {
+            content: '⌃';
+            position: absolute;
+            right: 0;
+            top: -0.1rem;
+            transform: rotate(180deg);
+        }
+    }
+
+    .expander
+    {
+        display: none;
+        padding: 0.5rem 0 0 0;
+
+        label,
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        textarea
+        {
+            font-size: 0.8rem;
+        }
+
+        label
+        {
+            display: block;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        textarea
+        {
+            border: 0.05rem solid rgba(black, 0.5);
+            box-sizing: border-box;
+            font-weight: 100;
+            margin: 0;
+            padding: 0.25rem;
+            width: 100%;
+        }
+    }
+
+    #details
+    {
+        div
+        {
+            margin: 0.5rem 0 0 0;
+
+            &:nth-child(3)
+            {
+                display: none;
+            }
+        }
+    }
+
+    .ability
+    {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 0.5rem 0 0 0;
+
+        .score,
+        .bonus
+        {
+            width: 6.5rem;
+        }
+
+        label
+        {
+            font-size: 0.6rem;
+            font-weight: 900;
+        }
+    }
+
+    #throws
+    {
+        p
+        {
+            margin: 0.5rem 0 0 0;
+        }
+
+        .save,
+        .skill
+        {
+            align-items: center;;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            height: 1.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .class_save,
+        .class_skill
+        {
+            text-align: center;
+            width: 1.6rem;
+
+            label
+            {
+                display: none;
+            }
+        }
+
+        .saving_throw,
+        .score
+        {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            height: 1.6rem;
+            justify-content: space-between;
+            width: 12.4rem;
+
+            label
+            {
+                font-size: 0.6rem;
+                width: 9.4rem;
+            }
+
+            input
+            {
+                text-align: center;
+                width: 3rem;
+            }
+        }
+    }
+
+    .passive,
+    .health_defense
+    {
+        margin-top: 0.5rem;
+    }
+
+    #death_saves
+    {
+        .success,
+        .failure
+        {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+    }
+
+    .weapon
+    {
+        .name,
+        .atk_bonus,
+        .damage_and_type
+        {
+            margin-top: 0.5rem;
+        }
+    }
+
+    #text_attacks_spellcasting
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 5rem;
+            resize: vertical;
+        }
+    }
+
+    #money
+    {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .money
+        {
+            margin-top: 0.5rem;
+            width: 6.5rem;
+        }
+    }
+
+    #text_equipment
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 15rem;
+            resize: vertical;
+        }
+    }
+
+    #story
+    {
+        label
+        {
+            margin-top: 0.5rem;
+        }
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 2.5rem;
+            resize: vertical;
+        }
+    }
+
+    #text_languages
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 5rem;
+            resize: vertical;
+        }
+    }
+
+    #text_traits
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 15rem;
+            resize: vertical;
+        }
+    }
+
+    #page-2 .character_name
+    {
+        display: none;
+    }
+
+    #stats
+    {
+        .top,
+        .bottom
+        {
+            margin-top: 0.5rem;
+        }
+    }
+
+    .other_info
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 5rem;
+            resize: vertical;
+        }
+    }
+
+    #text_backstory
+    {
+        margin-top: 0.5rem;
+
+        textarea
+        {
+            font-size: 0.6rem;
+            height: 15rem;
+            resize: vertical;
+        }
+    }
+
+    .spellcasting
+    {
+        label
+        {
+            margin-top: 0.5rem;
+        }
+    }
+
+    .spell_slots
+    {
+        margin-top: 0.5rem;
+
+        .spell_slots_total,
+        .spell_slots_expended
+        {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+
+            label
+            {
+                font-size: 0.7rem;
+                width: 11rem;
+            }
+
+            input
+            {
+                text-align: center;
+                width: 3rem;
+            }
+        }
+    }
+
+    .spell
+    {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-top: 0.25rem;
+
+        label
+        {
+            display: none;
+        }
+
+        .spell_prepared
+        {
+            width: 1.6rem;
+        }
+
+        .spell_name
+        {
+            width: 12.4rem;
+        }
+    }
+
+    #spell_expander_0
+    {
+        .spell_slots,
+        p
+        {
+            display: none;
+        }
+
+        .spell
+        {
+            .spell_prepared
+            {
+                display: none;
+            }
+
+            .spell_name
+            {
+                width: 14rem;
+            }
+        }
+    }
+}

@@ -22,6 +22,8 @@
 
                         <button type="submit">Logout</button>
                     </form>
+                @else
+                    <span id="guest">Guest</span>
                 @endauth
             </nav>
         </header>
