@@ -18,5 +18,6 @@ Route::post('character/{id}', 'CharacterController@update');
 
 Auth::routes([
     'confirm' => false,
-    'verify' => true,
+    'register' => false,
+    'verify' => false,
 ]);

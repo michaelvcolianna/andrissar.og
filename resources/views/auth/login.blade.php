@@ -29,7 +29,7 @@
             @endif
 
             @if(Route::has('register'))
-                <a href="{{ route('register') }}">Create an account</a>
+                {{-- <a href="{{ route('register') }}">Create an account</a> --}}
             @endif
         </aside>
     </div>
