@@ -27,9 +27,9 @@ class CreateCharactersTable extends Migration
             $table->string('race')->nullable()->default('?????');
             $table->string('alignment')->nullable()->default('?????');
             $table->string('experience_points')->nullable()->default(0);
-            $table->string('inspiration')->nullable();
+            $table->string('inspiration')->nullable()->default(0);
             $table->string('proficiency_bonus')->nullable()->default(0);
-            $table->string('passive_wisdom')->nullable()->deafult(0);
+            $table->string('passive_wisdom')->nullable()->default(0);
             $table->text('other_proficiencies_and_languages')->nullable();
             $table->string('armor_class')->nullable()->default(10);
             $table->string('initiative')->nullable()->default(0);

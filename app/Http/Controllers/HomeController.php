@@ -24,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(auth()->user()->id == 1)
+        {
+            $characters = Character::all();
+
+            return view('dm', compact('characters'));
+        }
+
         $character = Character::firstOrCreate(['user_id' => auth()->user()->id]);
 
         return view('home', compact('character'));

@@ -6,6 +6,11 @@
     }
 }
 
+@mixin dev
+{
+    background-color: rgba(crimson, 0.25);
+}
+
 @mixin appearance($value)
 {
     -webkit-appearance: $value;
