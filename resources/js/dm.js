@@ -6,7 +6,7 @@ let
     el_characters = document.querySelectorAll('.character')
     ;
 
-// Updates the character on checkbox change
+// Flips a character sheet page on click
 el_characters.forEach(div => div.addEventListener('click', function() {
     flipPage(event);
 }, false));
@@ -34,6 +34,7 @@ function flipPage(event)
     // Open new page
     if(page > 2)
     {
+        // Cycle back to the first page if on the last page
         page = 0;
     }
     page = (page + 1);

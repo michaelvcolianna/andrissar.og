@@ -26,11 +26,13 @@ class HomeController extends Controller
     {
         if(auth()->user()->id == 1)
         {
+            // DM screen: All characters
             $characters = Character::all();
 
             return view('dm', compact('characters'));
         }
 
+        // Individual user sheets
         $character = Character::firstOrCreate(['user_id' => auth()->user()->id]);
 
         return view('home', compact('character'));
