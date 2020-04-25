@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://andrissar.filthhole.org'),
+    'url' => env('APP_URL', 'https://andrissar.org'),
 
     'asset_url' => env('ASSET_URL', null),
 

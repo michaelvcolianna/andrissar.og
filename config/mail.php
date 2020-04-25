@@ -83,7 +83,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'andrissar@filthhole.org'),
+        'address' => env('MAIL_FROM_ADDRESS', 'andrissar@colianna.net'),
         'name' => env('MAIL_FROM_NAME', 'Andrissar'),
     ],
 

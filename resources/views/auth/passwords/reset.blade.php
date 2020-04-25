@@ -2,6 +2,16 @@
 
 @section('content')
     <div id="auth">
+        @if($errors->any())
+            <aside class="errors">
+                @foreach($errors->all() as $error)
+                    <p>
+                        {{ $error }}
+                    </p>
+                @endforeach
+            </aside>
+        @endif
+
         <form action="{{ route('password.update') }}" method="post">
             @csrf
             <input name="token" type="hidden" value="{{ $token }}">
