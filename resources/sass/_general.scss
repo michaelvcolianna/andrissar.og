@@ -116,19 +116,19 @@
         .character_name
         {
             font-family: fantasy;
-            font-size: 24px;
+            font-size: 22px;
             left: 60px;
             overflow-x: scroll;
-            top: 70px;
+            top: 73px;
             width: 200px;
         }
 
         .details
         {
-            font-size: 16px;
+            font-size: 11px;
             font-weight: 100;
             left: 314px;
-            top: 14px;
+            top: 18px;
             width: 376px;
 
             .top,
@@ -139,12 +139,12 @@
 
             .top
             {
-                top: 9px;
+                top: 12px;
             }
 
             .bottom
             {
-                top: 40px;
+                top: 43px;
             }
 
             .class_and_level,
@@ -172,7 +172,7 @@
         .abilities
         {
             left: 41px;
-            top: 134px;
+            top: 137px;
             width: 56px;
 
             .ability
@@ -250,7 +250,7 @@
 
         .skills
         {
-            top: 338px;
+            top: 342px;
 
             .skill
             {
@@ -361,7 +361,7 @@
 
         .saves
         {
-            top: 204px;
+            top: 207px;
 
             .save
             {
@@ -527,7 +527,7 @@
             height: 26px;
             @include justify-content(space-between);
             left: 417px;
-            top: 352px;
+            top: 354px;
             width: 41px;
 
             .success,
@@ -551,7 +551,7 @@
             height: 68px;
             @include justify-content(space-between);
             left: 268px;
-            top: 408px;
+            top: 411px;
             width: 199px;
 
             .weapon
@@ -582,6 +582,8 @@
 
             .damage_and_type
             {
+                font-size: 8px;
+                line-height: 22px;
                 width: 74px;
             }
         }
@@ -608,7 +610,7 @@
             @include justify-content(space-between);
             left: 266px;
             text-align: center;
-            top: 585px;
+            top: 588px;
             width: 53px;
 
             .money
@@ -635,7 +637,7 @@
             font-size: 10px;
             font-weight: 100;
             left: 501px;
-            top: -120px;
+            top: -116px;
             width: 187px;
 
             .pre
@@ -691,7 +693,7 @@
             left: 494px;
             overflow-y: scroll;
             position: absolute;
-            top: 462px;
+            top: 464px;
             width: 201px;
         }
 
@@ -936,6 +938,7 @@
         .spell_name
         {
             font-size: 10px;
+            height: 12px;
         }
 
         .spell_level_0 .spell_list
