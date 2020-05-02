@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->id == 1)
+        if(auth()->user()->id == 1 && !request()->has('edit'))
         {
             // DM screen: All characters
             $characters = Character::all();
