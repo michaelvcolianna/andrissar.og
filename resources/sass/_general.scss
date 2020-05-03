@@ -726,16 +726,19 @@
 
         .stats
         {
-            font-size: 16px;
+            font-size: 12px;
             font-weight: 100;
             left: 314px;
-            top: 14px;
+            top: 22px;
             width: 376px;
 
             .top,
             .bottom
             {
+                height: 18px;
+                overflow-x: scroll;
                 position: absolute;
+                white-space: nowrap;
             }
 
             .top
@@ -869,17 +872,19 @@
         .spell_stats
         {
             left: 323px;
-            top: 25px;
+            top: 28px;
 
             .spell_stat
             {
                 font-size: 24px;
                 height: 29px;
                 line-height: 29px;
+                overflow-x: scroll;
                 position: absolute;
                 text-align: center;
                 top: 6px;
                 width: 69px;
+                white-space: nowrap;
             }
 
             .spellcasting_ability
@@ -995,7 +1000,7 @@
             .spell_list
             {
                 height: 214px;
-                top: 41px;
+                top: 45px;
             }
         }
 
@@ -1006,7 +1011,7 @@
             .spell_list
             {
                 height: 214px;
-                top: 40px;
+                top: 44px;
             }
         }
 
@@ -1017,7 +1022,7 @@
             .spell_list
             {
                 height: 147px;
-                top: 41px;
+                top: 45px;
             }
         }
 
@@ -1029,7 +1034,7 @@
             {
                 height: 147px;
                 left: 9px;
-                top: 41px;
+                top: 45px;
             }
         }
 
@@ -1041,7 +1046,7 @@
             {
                 height: 147px;
                 left: 9px;
-                top: 41px;
+                top: 45px;
             }
         }
 
@@ -1053,7 +1058,7 @@
             {
                 height: 112px;
                 left: 9px;
-                top: 41px;
+                top: 45px;
             }
         }
 
@@ -1065,7 +1070,7 @@
             {
                 height: 112px;
                 left: 9px;
-                top: 41px;
+                top: 46px;
             }
         }
 
