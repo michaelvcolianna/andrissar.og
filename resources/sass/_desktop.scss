@@ -89,12 +89,25 @@
         }
     }
 
-    #brand
+    #logo
     {
         color: black;
         font-family: fantasy;
         font-weight: 900;
         text-decoration: none;
+    }
+
+    #campaign
+    {
+        color: dodgerblue;
+        font-size: 20px;
+        font-size: 1.666666666666667vw;
+        font-variant: small-caps;
+        margin: 0 0 0 10px;
+        margin: 0 0 0 0.8333333334vw;
+        padding: 0;
+        text-decoration: underline;
+        text-transform: lowercase;
     }
 
     .character-sheet

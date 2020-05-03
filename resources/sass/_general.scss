@@ -22,17 +22,28 @@
         width: 100vw;
     }
 
-    #brand,
+    #logo,
     button
     {
         font-size: 20px;
         position: fixed;
     }
 
-    #brand
+    #logo
     {
         left: 15px;
         top: 14px;
+    }
+
+    #campaign
+    {
+        color: dodgerblue;
+        font-size: 20px;
+        font-variant: small-caps;
+        margin: 0 0 0 150px;
+        padding: 0;
+        text-decoration: underline;
+        text-transform: lowercase;
     }
 
     span

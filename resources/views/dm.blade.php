@@ -12,7 +12,11 @@
     <body>
         <header id="header-dm" style="width: {{ count($characters) * 735 }}px;">
             <nav>
-                <a id="brand" href="{{ route('home') }}">Andrissar</a>
+                <div id="brand">
+                    <a id="logo" href="{{ route('home') }}">Andrissar</a>
+
+                    <a id="campaign" href="//campaign.andrissar.org">Campaign Site</a>
+                </div>
 
                 @auth
                     <form id="logout" action="{{ route('logout') }}" method="post">
