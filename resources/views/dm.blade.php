@@ -14,8 +14,6 @@
             <nav>
                 <div id="brand">
                     <a id="logo" href="{{ route('home') }}">Andrissar</a>
-
-                    <a id="campaign" href="//campaign.andrissar.org">Campaign Site</a>
                 </div>
 
                 @auth
