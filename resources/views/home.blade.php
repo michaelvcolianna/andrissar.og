@@ -35,7 +35,7 @@
 
                         <div class="top">
                             <label for="player_name">Player Name</label>
-                            <input id="player_name" type="text" value="{{ auth()->user()->name }}" disabled>
+                            <input id="player_name" type="text" value="{{ $character->user->name }}" disabled>
                         </div>
 
                         <div class="bottom">

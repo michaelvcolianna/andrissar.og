@@ -24,16 +24,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->id == 1 && !request()->has('edit'))
-        {
-            // DM screen: All characters
-            $characters = Character::all();
-
-            return view('dm', compact('characters'));
-        }
-
         // Individual user sheets
         $character = Character::firstOrCreate(['user_id' => auth()->user()->id]);
+
+        if(auth()->user()->id == 1)
+        {
+            if(!request()->has('edit') && !request()->has('char'))
+            {
+                // DM screen: All characters
+                $characters = Character::all();
+
+                return view('dm', compact('characters'));
+            }
+
+            if(request()->has('char'))
+            {
+                $character = Character::find(request()->char);
+            }
+        }
 
         return view('home', compact('character'));
     }
