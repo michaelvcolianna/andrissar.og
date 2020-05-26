@@ -3,6 +3,32 @@
     outline: 0;
 }
 
+.view
+{
+    [disabled]
+    {
+        color: black;
+    }
+
+    .character_name input
+    {
+        font-size: 26px;
+        font-size: 2.166666666666667vw;
+    }
+
+    #character_name
+    {
+        top: 105px;
+        top: 8.75vw;
+    }
+
+    #character_name_2
+    {
+        top: 112px;
+        top: 9.333333333333333vw;
+    }
+}
+
 .errors
 {
     color: red;

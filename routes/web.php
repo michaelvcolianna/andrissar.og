@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('character/{slug}', 'CharacterController@index');
 Route::post('character/{id}', 'CharacterController@update');
 
 Auth::routes([
