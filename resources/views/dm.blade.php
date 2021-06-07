@@ -32,8 +32,10 @@
 
         <main id="app">
             <div id="dm" style="width: {{ count($characters) * 735 }}px;">
-                @foreach($characters as $cid => $character)
-                    <div class="character" rel="{{ $cid }}">
+                @foreach($characters as $character)
+                    <div class="character" rel="{{ $character->id }}">
+                        <span style="color: #d3d3d3; padding: 8px; position: absolute;">{{ $character->id }}</span>
+
                         <div class="page--1 on" rel="1">
                             <div class="character_name">
                                 {{ $character->character_name }}
