@@ -32,7 +32,7 @@ class HomeController extends Controller
             if(!request()->has('edit') && !request()->has('char'))
             {
                 // DM screen: All characters
-                $characters = Character::all();
+                $characters = Character::orderBy('order')->get();
 
                 return view('dm', compact('characters'));
             }
